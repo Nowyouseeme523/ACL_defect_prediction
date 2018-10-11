@@ -161,19 +161,24 @@ if __name__ == '__main__':
     if sys.version_info[0] < 3:
         raise Exception("Python 3 or a more recent version is required.")
 
-    mypath  = base_dir + "/repositories/"
+    repositories_path  = base_dir + "/repositories/"
+    results_path = base_dir + "/results/"
 
     #get the name of the result file of each repository
-    repositories_list = get_files_from_dir(mypath)
+    repositories_list = get_files_from_dir(repositories_path)
 
     for rep in repositories_list:
         
+        #change to results folder
+        os.chdir(results_path)
+
         #path of csv file
-        target_dir = mypath + rep
+        target_dir = repositories_path + rep
 
         #cumpute results for rep
         HAM_values, MVM_values = compute_HAM_MVM(target_dir)
         result = compute_cutoff(HAM_values, MVM_values)
 
-        #store all results in a dict
-        all_results[rep] = result
+        #store the results in a csv_file
+        csv_name = rep 
+        results_to_csv(csv_name, result)
