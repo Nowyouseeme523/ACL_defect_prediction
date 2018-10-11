@@ -24,6 +24,29 @@ def get_files_from_dir(mypath):
 
 
 """
+Converts a dict to a csv file
+parms:
+    csv_name   = name of the csv that will be created
+    my_results = a list where each value is a dict instance (like a json file) 
+"""
+def results_to_csv(csv_name, my_results):
+
+    #keys of the dict will be the columns
+    dict_data = my_results
+    csv_columns = dict_data[0].keys()
+
+    try:
+        with open(csv_name, 'w') as csvfile:
+            writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
+            writer.writeheader()
+            for data in dict_data:
+                writer.writerow(data)
+    except IOError:
+        print("E: I/O error")
+        sys.exit(-1) 
+
+
+"""
 Given a csv file with metrics compute HAM and MVM
 params:
     afile = target csv file
