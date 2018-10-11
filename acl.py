@@ -7,7 +7,14 @@ import sys
 import pandas as pd
 import statistics as stats
 
+from os import listdir
+from os.path import isfile, join
 
+def get_files_from_dir(mypath):
+
+    #returns a list that contains all files from mypath
+    all_files = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+    return all_files
 
 def compute_HAM_MVM(afile):
 
@@ -55,6 +62,9 @@ def compute_HAM_MVM(afile):
 
 
 def compute_cutoff(HAM_values, MVM_values):
+
+    #store final results
+    results = {}
     
     number_of_metrics = len(list(HAM_values.keys()))
     number_of_instances = len(list(MVM_values.keys()))
@@ -89,23 +99,38 @@ def compute_cutoff(HAM_values, MVM_values):
     for instance, value in mivs_values.items():
 
         if value > cutoff:
+            results[instance] = {"Component" : instance, "Threshold" : value, "Cutoff" : cutoff, "Status" : "Fault proner"}
             print("{} : buggy".format(instance))
         else:
+            results[instance] = {"Component" : instance, "Threshold" : value, "Cutoff" : cutoff, "Status" : "Clean"}
             print("{} : clean".format(instance))
 
+    return results
 
 if __name__ == '__main__':
     
+    all_results = {}
+
+    #base dir
     base_dir = os.getcwd()
+    
+    #Check python version
+    if sys.version_info[0] < 3:
+        raise Exception("Python 3 or a more recent version is required.")
 
-    #Verify the execution
-    if len(sys.argv) < 2:
-        print('Usage: python acl.py instance.csv')
-        sys.exit(-1)
+    mypath  = base_dir + "/repositories/"
 
-    target_file = str(sys.argv[1]) #csv with the instances and metrics
-    target_dir  = base_dir + "/repositories/" + target_file
+    #get the name of the result file of each repository
+    all_files_list = get_files_from_dir(mypath)
 
-    #cumpute results
-    HAM_values, MVM_values = compute_HAM_MVM(target_dir)
-    compute_cutoff(HAM_values, MVM_values)
+    for rep in all_files_list:
+        
+        #path of csv file
+        target_dir = mypath + rep
+
+        #cumpute results for rep
+        HAM_values, MVM_values = compute_HAM_MVM(target_dir)
+        result = compute_cutoff(HAM_values, MVM_values)
+
+        #store all results in a dict
+        all_results[rep] = result
