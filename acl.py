@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import os
-import csv
 import sys
+import csv
 
 import pandas as pd
 import statistics as stats
@@ -168,11 +168,19 @@ if __name__ == '__main__':
     #get the name of the result file of each repository
     repositories_list = get_files_from_dir(repositories_path)
 
+    #simple dir check
+    try:
+        #verifies if its a valid dir	
+        os.stat(results_path)
+    except:
+        #since the dir doesn't exist, create it!
+        os.mkdir(results_path)
+
+    #change to results folder
+    os.chdir(results_path)
+
     for rep in repositories_list:
         
-        #change to results folder
-        os.chdir(results_path)
-
         #path of csv file
         target_dir = repositories_path + rep
 
