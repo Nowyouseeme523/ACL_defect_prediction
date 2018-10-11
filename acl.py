@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import csv
 import sys
 
 import pandas as pd
@@ -10,12 +11,23 @@ import statistics as stats
 from os import listdir
 from os.path import isfile, join
 
+"""
+Read a path and returns a list with all the files contained inside it
+parms:
+    mypath = target path
+"""
 def get_files_from_dir(mypath):
 
     #returns a list that contains all files from mypath
     all_files = [f for f in listdir(mypath) if isfile(join(mypath, f))]
     return all_files
 
+
+"""
+Given a csv file with metrics compute HAM and MVM
+params:
+    afile = target csv file
+"""
 def compute_HAM_MVM(afile):
 
     #will store the results
@@ -61,10 +73,16 @@ def compute_HAM_MVM(afile):
     return HAM_values, MVM_values
 
 
+"""
+Compute threshold in order to verify if some instance is fault proner or not
+parms:
+    HAM_values = a dict that contains the hamonic mean of each evaluated module
+    MVM_values = a dict that contaions the metrics value matrix of each evaluated module
+"""
 def compute_cutoff(HAM_values, MVM_values):
 
     #store final results
-    results = {}
+    results = []
     
     number_of_metrics = len(list(HAM_values.keys()))
     number_of_instances = len(list(MVM_values.keys()))
@@ -99,13 +117,15 @@ def compute_cutoff(HAM_values, MVM_values):
     for instance, value in mivs_values.items():
 
         if value > cutoff:
-            results[instance] = {"Component" : instance, "Threshold" : value, "Cutoff" : cutoff, "Status" : "Fault proner"}
-            print("{} : buggy".format(instance))
+            results.append({"Component" : instance, "Threshold" : value, "Cutoff" : cutoff, "Status" : "Fault_proner"})
+            #print("{} : buggy".format(instance))
         else:
-            results[instance] = {"Component" : instance, "Threshold" : value, "Cutoff" : cutoff, "Status" : "Clean"}
-            print("{} : clean".format(instance))
+            results.append({"Component" : instance, "Threshold" : value, "Cutoff" : cutoff, "Status" : "Clean"})
+            #print("{} : clean".format(instance))
 
     return results
+
+
 
 if __name__ == '__main__':
     
@@ -121,9 +141,9 @@ if __name__ == '__main__':
     mypath  = base_dir + "/repositories/"
 
     #get the name of the result file of each repository
-    all_files_list = get_files_from_dir(mypath)
+    repositories_list = get_files_from_dir(mypath)
 
-    for rep in all_files_list:
+    for rep in repositories_list:
         
         #path of csv file
         target_dir = mypath + rep
