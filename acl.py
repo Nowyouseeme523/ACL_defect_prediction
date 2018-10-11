@@ -18,7 +18,7 @@ parms:
 """
 def get_files_from_dir(mypath):
 
-    #returns a list that contains all files from mypath
+    #returns a list that contains all files from mypath | reference -> https://stackoverflow.com/questions/3207219/how-do-i-list-all-files-of-a-directory
     all_files = [f for f in listdir(mypath) if isfile(join(mypath, f))]
     return all_files
 
@@ -35,6 +35,7 @@ def results_to_csv(csv_name, my_results):
     dict_data = my_results
     csv_columns = dict_data[0].keys()
 
+    #reference -> https://www.tutorialspoint.com/How-to-save-a-Python-Dictionary-to-CSV-file
     try:
         with open(csv_name, 'w') as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
