@@ -60,7 +60,11 @@ def compute_HAM_MVM(afile):
 
     #read csv and drop LCOM metric
     repository = pd.read_csv(afile)
-    repository.drop('LCOM', axis=1, inplace=True)
+    try:
+    	repository.drop('LCOM', axis=1, inplace=True)
+    except Exception as e:
+    	print("Error file: {}".format(afile))
+    
 
     columns = repository.columns
 
@@ -190,4 +194,14 @@ if __name__ == '__main__':
 
         #store the results in a csv_file
         csv_name = rep 
+        all_results[rep] = result
         results_to_csv(csv_name, result)
+
+    for key, values in all_results.items():
+        faults = 0
+        total = 0
+        for v in values:
+            total += 1
+            if "Fault_proner" in v["Status"]:
+                faults += 1
+        print("{},{},{}".format(key[:-4], faults, total))
