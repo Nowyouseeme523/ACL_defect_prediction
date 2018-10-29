@@ -1,0 +1,17 @@
+Type,NOF,NOM,NOP,NOPF,NOPM,LOC,WMC,NC,DIT,LCOM,Fan-Out,Fan-In
+HoneyActor,1,5,4,0,0,106,13,0,0,"0,6000000238418579",0,1
+Levels,0,0,0,0,0,6,0,0,0,-1,0,0
+HoneyContext,2,1,14,0,1,125,1,0,0,0,1,1
+HoneyInterpreter,3,7,1,1,2,108,12,0,0,"0,7099999785423279",3,0
+HoneySeatedMode,0,4,1,0,0,62,5,0,0,-1,0,0
+HoneySelectVR,3,7,3,0,7,133,13,0,0,1,5,0
+HoneySettings,2,0,2,0,0,19,0,0,0,-1,0,3
+HoneyStandingMode,0,5,1,0,0,69,9,0,0,-1,0,0
+HSceneSpriteDummy,2,81,0,0,81,423,84,0,0,"0,05000000074505806",1,1
+GaugeCutout,1,3,0,0,0,30,3,0,0,1,0,0
+PlayButton,5,0,0,5,0,8,0,1,0,-1,0,1
+SpriteButton,0,1,2,0,1,25,1,0,1,-1,0,1
+PlayTool,15,11,2,1,0,335,41,0,0,"0,18000000715255737",2,1
+VoiceShim,1,23,0,0,21,124,26,0,0,"0,12999999523162842",0,1
+TransientHead,7,5,2,0,3,126,12,0,0,0,0,1
+VRConfigEffector,0,1,0,0,1,11,2,0,0,-1,0,1
