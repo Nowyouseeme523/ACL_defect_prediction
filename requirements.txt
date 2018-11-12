@@ -1,4 +1,6 @@
 pandas
 matplotlib
 statistics
-
+openpyxl
+xlrd
+datetime
