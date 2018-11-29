@@ -1,0 +1,17 @@
+Type,NOF,NOM,NOP,NOPF,NOPM,LOC,WMC,NC,DIT,LCOM,Fan-Out,Fan-In
+TestNameMustIncludeMemberUnderTestAnalyzer,6,3,1,1,1,70,9,0,0,1,4,1
+UseAAACommentsAnalyzer,11,3,1,2,1,109,10,0,0,1,4,1
+UseCorrectTestNameFormatAnalyzer,6,3,1,1,1,51,5,0,0,1,4,1
+UseUnitTestsSuffixAnalyzer,6,3,1,1,1,47,5,0,0,1,4,1
+Resources,2,1,17,0,0,176,1,0,0,0,0,0
+AttributeBasedTestParser,0,4,1,0,2,63,9,3,1,-1,0,0
+IUnitTestParser,0,2,0,0,0,20,2,1,0,-1,0,4
+MSTestParser,0,1,1,0,1,24,3,0,2,-1,0,1
+NUnitTestParser,0,0,1,0,0,10,0,0,2,-1,0,1
+UnitTestParserFactory,0,1,0,0,1,17,2,0,0,-1,5,4
+XunitTestParser,0,0,1,0,0,8,0,0,2,-1,0,1
+AnalyzersSettings,8,1,5,2,0,90,1,0,0,0,1,10
+UnitTestFramework,0,0,0,0,0,17,0,0,0,-1,0,7
+SettingsFile,1,1,1,0,0,27,1,0,0,0,0,1
+SettingsProvider,2,2,0,0,0,73,10,0,0,1,2,4
+SettingsReader,0,1,0,0,0,25,1,0,0,-1,2,1

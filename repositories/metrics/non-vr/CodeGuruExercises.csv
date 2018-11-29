@@ -1,0 +1,5 @@
+Type,NOF,NOM,NOP,NOPF,NOPM,LOC,WMC,NC,DIT,LCOM,Fan-Out,Fan-In
+Challenge1,3,2,0,3,2,94,4,0,1,0,0,0
+Challenge2,5,2,0,5,2,143,6,0,1,0,0,0
+Challenge3,2,2,0,2,2,89,3,0,1,0,0,0
+NUnitChallenge,0,6,5,0,1,103,8,3,0,-1,0,0

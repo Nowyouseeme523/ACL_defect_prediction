@@ -1,0 +1,5 @@
+Type,NOF,NOM,NOP,NOPF,NOPM,LOC,WMC,NC,DIT,LCOM,Fan-Out,Fan-In
+Colectivo,0,1,3,0,1,13,1,0,0,-1,0,2
+Program,0,1,0,0,0,46,1,0,0,-1,2,0
+Tarjeta,0,5,4,0,5,117,13,0,0,-1,2,1
+Viaje,0,1,4,0,1,15,1,0,0,-1,0,1

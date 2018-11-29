@@ -1,0 +1,8 @@
+Type,NOF,NOM,NOP,NOPF,NOPM,LOC,WMC,NC,DIT,LCOM,Fan-Out,Fan-In
+TestFramework,0,0,0,0,0,6,0,0,0,-1,0,1
+IntExtensions,0,1,0,0,1,10,2,0,0,-1,1,0
+NullableIntExtensions,0,1,0,0,1,13,2,0,0,-1,1,0
+ObjectExtensions,0,3,0,0,3,27,4,0,0,-1,1,0
+StringExtensions,0,6,0,0,6,52,10,0,0,-1,1,0
+Check,0,3,0,0,2,37,5,0,0,-1,1,12
+Check<T>,0,2,4,0,0,24,2,0,0,-1,0,0

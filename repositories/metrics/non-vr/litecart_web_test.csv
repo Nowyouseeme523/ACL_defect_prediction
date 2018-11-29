@@ -1,0 +1,5 @@
+Type,NOF,NOM,NOP,NOPF,NOPM,LOC,WMC,NC,DIT,LCOM,Fan-Out,Fan-In
+Circle,0,1,1,0,1,9,1,0,1,-1,0,1
+Figure,0,0,1,0,0,6,0,2,0,-1,0,0
+Square,0,1,1,0,1,9,1,0,1,-1,0,1
+UnitTest1,2,9,0,0,7,109,9,0,0,0.3300000131130219,2,0

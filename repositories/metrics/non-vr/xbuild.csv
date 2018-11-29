@@ -1,0 +1,14 @@
+Type,NOF,NOM,NOP,NOPF,NOPM,LOC,WMC,NC,DIT,LCOM,Fan-Out,Fan-In
+AssemblyLoadInfo,5,4,6,0,3,81,10,1,0,0.5,1,0
+LoadInfoType,0,0,0,0,0,5,0,0,0,-1,0,3
+CommandLineException,1,7,2,0,7,56,7,0,0,0.5699999928474426,0,1
+ErrorUtilities,1,10,0,0,9,84,12,0,0,0.300000011920929,0,2
+LoggerInfo,8,5,1,0,0,129,17,0,1,0,1,1
+MainClass,6,3,0,0,3,122,16,0,0,0,13,0
+ConsoleReportPrinter,5,10,0,0,5,139,17,0,0,0.2000000029802322,1,1
+UnixUtils,0,2,0,0,1,13,2,0,0,-1,0,1
+Parameters,16,15,13,0,2,384,46,0,0,0.1299999952316284,3,2
+ProjectInfo,7,1,0,7,1,16,1,0,0,0,0,1
+ProjectSection,2,1,0,2,1,9,1,0,0,0,0,1
+TargetInfo,3,2,0,3,2,17,2,0,0,1,0,1
+SolutionParser,16,30,0,0,2,940,137,0,0,0,12,1

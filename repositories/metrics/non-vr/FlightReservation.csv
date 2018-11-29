@@ -1,0 +1,8 @@
+Type,NOF,NOM,NOP,NOPF,NOPM,LOC,WMC,NC,DIT,LCOM,Fan-Out,Fan-In
+BookFlightPage,0,3,5,0,3,48,4,0,0,-1,2,2
+LoginPage,0,2,3,0,2,37,2,0,0,-1,2,1
+ReservationPage,0,3,5,0,3,50,3,0,0,-1,3,2
+SelectFlightPage,0,2,1,0,2,20,2,0,0,-1,2,2
+PropertyCollection,0,0,1,0,0,4,0,0,0,-1,0,5
+SetMethods,0,4,0,0,4,28,6,0,0,-1,0,2
+TestTicketRes,0,3,0,0,3,63,3,0,0,-1,5,0

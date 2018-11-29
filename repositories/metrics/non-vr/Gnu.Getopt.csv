@@ -1,0 +1,5 @@
+Type,NOF,NOM,NOP,NOPF,NOPM,LOC,WMC,NC,DIT,LCOM,Fan-Out,Fan-In
+Getopt,19,6,7,0,4,980,55,0,0,0,3,2
+Order,0,0,0,0,0,28,0,0,0,-1,0,1
+Argument,0,0,0,0,0,17,0,0,0,-1,0,3
+LongOpt,6,1,4,0,1,148,3,0,0,0,1,2

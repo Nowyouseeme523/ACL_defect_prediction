@@ -1,0 +1,14 @@
+Type,NOF,NOM,NOP,NOPF,NOPM,LOC,WMC,NC,DIT,LCOM,Fan-Out,Fan-In
+Program,0,2,0,0,0,176,2,0,0,-1,2,0
+Day01Solution,1,5,0,0,2,125,13,0,0,0,1,1
+DirectionEnum,0,0,0,0,0,7,0,0,0,-1,0,1
+Day02Solution,0,4,0,0,2,128,12,0,0,-1,0,1
+Day03Solution,0,3,0,0,3,67,11,0,0,-1,0,1
+Day06Solution,0,3,0,0,2,60,8,0,0,-1,0,1
+Day05Solution,2,3,0,0,2,75,10,0,0,0,0,1
+Day04Solution,0,8,0,0,4,147,20,0,0,-1,0,1
+Day10Solution,0,2,0,0,2,12,2,0,0,-1,0,0
+Day09Solution,0,2,0,0,2,12,2,0,0,-1,0,0
+Day08Solution,9,7,0,2,3,172,19,0,0,0,0,2
+Day07Solution,0,6,0,0,2,83,17,0,0,-1,0,1
+Tester,0,20,0,0,20,279,20,0,0,-1,8,1

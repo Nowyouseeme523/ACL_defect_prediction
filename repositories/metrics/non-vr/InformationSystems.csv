@@ -1,0 +1,13 @@
+Type,NOF,NOM,NOP,NOPF,NOPM,LOC,WMC,NC,DIT,LCOM,Fan-Out,Fan-In
+BundleConfig,0,1,0,0,1,25,1,0,0,-1,0,1
+FilterConfig,0,1,0,0,1,7,1,0,0,-1,0,1
+RouteConfig,0,1,0,0,1,13,1,0,0,-1,0,1
+MvcApplication,0,1,0,0,0,10,1,0,0,-1,3,0
+AccountsController,1,9,0,0,8,119,18,0,0,0,2,0
+HomeController,0,3,0,0,3,21,3,0,0,-1,0,1
+Account,0,1,6,0,1,17,1,0,0,-1,0,1
+ISTestEntities,0,2,3,0,1,16,2,0,0,-1,0,3
+Person,0,1,5,0,1,16,1,0,0,-1,0,1
+Transaction,0,0,7,0,0,11,0,0,0,-1,0,1
+PeopleController,1,9,0,0,8,114,18,0,0,0.2199999988079071,2,0
+TransactionsController,1,9,0,0,8,119,18,0,0,0,2,0

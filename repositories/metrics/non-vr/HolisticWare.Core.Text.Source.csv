@@ -1,0 +1,4 @@
+Type,NOF,NOM,NOP,NOPF,NOPM,LOC,WMC,NC,DIT,LCOM,Fan-Out,Fan-In
+CharacterSeparatedValues,0,4,6,0,3,137,9,0,0,-1,0,0
+Parser,0,0,0,0,0,3,0,0,0,-1,0,0
+SplitIntelligentlyExtensions,0,4,0,0,4,279,20,0,0,-1,0,0
