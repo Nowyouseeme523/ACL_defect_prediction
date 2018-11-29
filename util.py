@@ -11,11 +11,9 @@ import datetime
 
 #needs to install Gnumeric spreadsheet program to convert the files
 
-def xlsx_to_csv(target_home):
+def xlsx_to_csv(target_dir):
 
-	mutants_list = []
-
-	for file in os.listdir(target_home):
+	for file in os.listdir(target_dir):
 
 		#read only xlsx files, ignore other files
 		if ".xlsx" not in file and 'xls' not in file:
@@ -78,3 +76,26 @@ def xls_to_xlsx(*args, **kw):
 	filename = str(*args)
 	filename = filename.replace('xls', 'xlsx')
 	book_xlsx.save(filename)
+
+if __name__ == "__main__":
+	
+	option = True
+
+	target_dir = 'specify/the/target/dir'
+	os.chdir(target_dir)
+
+	#xlsx -> csv
+	if option:
+		xlsx_to_csv(target_dir)
+
+	#xls -> xlsx
+	else:
+		
+		for root, dirs, files in os.walk(".", topdown=False):
+			for file_name in files:
+				print file_name
+				
+				if ".xls" not in file_name:
+					continue
+				
+				xls_to_xlsx(file_name)
