@@ -1,0 +1,6 @@
+Type,NOF,NOM,NOP,NOPF,NOPM,LOC,WMC,NC,DIT,LCOM,Fan-Out,Fan-In
+SingletonBase<T>,1,4,0,0,2,69,9,0,0,0,0,0
+DALSaveGame,2,9,0,0,7,82,10,0,0,0.6700000166893005,0,0
+QuaternionSurrogate,0,2,0,0,2,20,2,0,0,-1,0,0
+SaveFileSerializer,0,14,0,0,14,321,24,0,0,-1,0,0
+Vector3Surrogate,0,2,0,0,2,20,2,0,0,-1,0,0
