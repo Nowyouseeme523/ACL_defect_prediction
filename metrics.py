@@ -10,8 +10,11 @@ def compute_metrics(afile):
     results = []
 
     repo = pd.read_csv(afile,sep=',')
-    num_classes = repo['Type'].count()
-    print(num_classes)
+
+    #get general information of each repositorie
+    #num_classes = repo['Type'].count()
+    #total_LOC = repo['LOC'].sum()
+
     try:
     	repo.drop('LCOM', axis=1, inplace=True)
     except Exception as e:
@@ -43,7 +46,7 @@ if __name__ == '__main__':
     #base dir
     base_dir = os.getcwd()
 
-    repositories_path  = base_dir + "/repositories/"
+    repositories_path  = base_dir + "/repositories/metrics/vr"
 
     os.chdir(repositories_path)
 
@@ -71,5 +74,3 @@ if __name__ == '__main__':
     #print the values
     for column, value in zip(columns, results):
         print("{}: {}".format(column, value))
-
-    print("Number of classes: ", num_classes)
