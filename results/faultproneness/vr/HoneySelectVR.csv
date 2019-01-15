@@ -1,0 +1,17 @@
+Component,Threshold,Cutoff,Status
+HoneyActor,5,8.503794642857144,Clean
+Levels,0,8.503794642857144,Clean
+HoneyContext,5,8.503794642857144,Clean
+HoneyInterpreter,6,8.503794642857144,Clean
+HoneySeatedMode,1,8.503794642857144,Clean
+HoneySelectVR,7,8.503794642857144,Clean
+HoneySettings,3,8.503794642857144,Clean
+HoneyStandingMode,3,8.503794642857144,Clean
+HSceneSpriteDummy,7,8.503794642857144,Clean
+GaugeCutout,0,8.503794642857144,Clean
+PlayButton,4,8.503794642857144,Clean
+SpriteButton,3,8.503794642857144,Clean
+PlayTool,8,8.503794642857144,Clean
+VoiceShim,5,8.503794642857144,Clean
+TransientHead,6,8.503794642857144,Clean
+VRConfigEffector,1,8.503794642857144,Clean

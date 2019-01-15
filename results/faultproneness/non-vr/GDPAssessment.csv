@@ -1,0 +1,15 @@
+Component,Threshold,Cutoff,Status
+AdsCheckout,6,8.036049456278862,Clean
+ClassicAd,3,8.036049456278862,Clean
+PremiumAd,3,8.036049456278862,Clean
+Product,3,8.036049456278862,Clean
+StandoutAd,3,8.036049456278862,Clean
+Program,4,8.036049456278862,Clean
+CustomerRule,2,8.036049456278862,Clean
+Discount,8,8.036049456278862,Clean
+IRule,2,8.036049456278862,Clean
+PriceDrop,8,8.036049456278862,Clean
+ProductPrice,5,8.036049456278862,Clean
+Rule,9,8.036049456278862,Fault_proner
+RuleHelper,6,8.036049456278862,Clean
+RuleMaker,6,8.036049456278862,Clean

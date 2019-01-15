@@ -1,0 +1,6 @@
+Component,Threshold,Cutoff,Status
+Geometry,4,12.1125,Clean
+Gesture,8,12.1125,Clean
+Point,4,12.1125,Clean
+PointCloudRecognizer,5,12.1125,Clean
+GestureIO,5,12.1125,Clean

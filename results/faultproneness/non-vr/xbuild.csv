@@ -1,0 +1,14 @@
+Component,Threshold,Cutoff,Status
+AssemblyLoadInfo,6,8.324509498598568,Clean
+LoadInfoType,1,8.324509498598568,Clean
+CommandLineException,4,8.324509498598568,Clean
+ErrorUtilities,5,8.324509498598568,Clean
+LoggerInfo,7,8.324509498598568,Clean
+MainClass,5,8.324509498598568,Clean
+ConsoleReportPrinter,6,8.324509498598568,Clean
+UnixUtils,1,8.324509498598568,Clean
+Parameters,8,8.324509498598568,Clean
+ProjectInfo,3,8.324509498598568,Clean
+ProjectSection,2,8.324509498598568,Clean
+TargetInfo,4,8.324509498598568,Clean
+SolutionParser,7,8.324509498598568,Clean

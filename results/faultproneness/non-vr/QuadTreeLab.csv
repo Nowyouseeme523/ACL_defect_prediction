@@ -1,0 +1,5 @@
+Component,Threshold,Cutoff,Status
+IBoundable,1,7.857142857142858,Clean
+Node<T>,6,7.857142857142858,Clean
+QuadTree<T>,8,7.857142857142858,Fault_proner
+Rectangle,5,7.857142857142858,Clean

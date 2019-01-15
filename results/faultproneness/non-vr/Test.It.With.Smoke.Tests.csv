@@ -1,0 +1,17 @@
+Component,Threshold,Cutoff,Status
+ChainedFixtureIterator,8,6.863347457627119,Fault_proner
+ChainedFixtureSpecificationAttribute,6,6.863347457627119,Clean
+ChainTestFixture,7,6.863347457627119,Fault_proner
+Fixture<T>,2,6.863347457627119,Clean
+Fixture,4,6.863347457627119,Clean
+IFixtureIterator,3,6.863347457627119,Clean
+NewExpressionExtensions,4,6.863347457627119,Clean
+SmokeTestAttribute,6,6.863347457627119,Clean
+SkipIfPreviousTestsFailedCommand,6,6.863347457627119,Clean
+ChainedFixtures<TFixture>,1,6.863347457627119,Clean
+IBuildFixtures,2,6.863347457627119,Clean
+IConfigureFixtures,4,6.863347457627119,Clean
+IConfigureNextFixtureChain,4,6.863347457627119,Clean
+IStartConfigureFixtureChain,2,6.863347457627119,Clean
+NextChainedFixtureConfiguration<TPreviousFixture>,7,6.863347457627119,Fault_proner
+StartChainedFixtureConfiguration<TFixture>,7,6.863347457627119,Fault_proner

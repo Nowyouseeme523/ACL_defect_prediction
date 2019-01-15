@@ -1,0 +1,8 @@
+Component,Threshold,Cutoff,Status
+BookFlightPage,7,5.478879924062649,Fault_proner
+LoginPage,6,5.478879924062649,Fault_proner
+ReservationPage,7,5.478879924062649,Fault_proner
+SelectFlightPage,6,5.478879924062649,Fault_proner
+PropertyCollection,1,5.478879924062649,Clean
+SetMethods,5,5.478879924062649,Clean
+TestTicketRes,5,5.478879924062649,Clean

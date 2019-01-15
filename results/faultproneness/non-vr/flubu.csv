@@ -1,0 +1,4 @@
+Component,Threshold,Cutoff,Status
+FlubuCloreAnalyzerCodeFixProvider,5,6.114942528735632,Clean
+FromArgAnalyzer,8,6.114942528735632,Fault_proner
+TargetParameterAnalyzer,8,6.114942528735632,Fault_proner

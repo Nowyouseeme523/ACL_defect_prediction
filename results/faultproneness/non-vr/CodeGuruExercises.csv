@@ -1,0 +1,5 @@
+Component,Threshold,Cutoff,Status
+Challenge1,7,6.7407407407407405,Fault_proner
+Challenge2,7,6.7407407407407405,Fault_proner
+Challenge3,7,6.7407407407407405,Fault_proner
+NUnitChallenge,6,6.7407407407407405,Clean

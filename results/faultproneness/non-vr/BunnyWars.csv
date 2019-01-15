@@ -1,0 +1,6 @@
+Component,Threshold,Cutoff,Status
+Bunny,3,7.8171428571428585,Clean
+BunnyWarsStructure,8,7.8171428571428585,Fault_proner
+BunnyComparer,0,7.8171428571428585,Clean
+BunnyWarsTestingGround,0,7.8171428571428585,Clean
+IBunnyWarsStructure,5,7.8171428571428585,Clean

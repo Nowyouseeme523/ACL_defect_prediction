@@ -1,0 +1,13 @@
+Component,Threshold,Cutoff,Status
+BundleConfig,2,5.351851851851852,Clean
+FilterConfig,1,5.351851851851852,Clean
+RouteConfig,1,5.351851851851852,Clean
+MvcApplication,1,5.351851851851852,Clean
+AccountsController,6,5.351851851851852,Fault_proner
+HomeController,5,5.351851851851852,Clean
+Account,2,5.351851851851852,Clean
+ISTestEntities,3,5.351851851851852,Clean
+Person,2,5.351851851851852,Clean
+Transaction,2,5.351851851851852,Clean
+PeopleController,6,5.351851851851852,Fault_proner
+TransactionsController,6,5.351851851851852,Fault_proner

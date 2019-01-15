@@ -166,8 +166,8 @@ if __name__ == '__main__':
     if sys.version_info[0] < 3:
         raise Exception("Python 3 or a more recent version is required.")
 
-    repositories_path  = base_dir + "/repositories/"
-    results_path = base_dir + "/results/"
+    repositories_path  = base_dir + "/repositories/metrics/non-vr/"
+    results_path = base_dir + "/results/faultproneness/non-vr"
 
     #get the name of the result file of each repository
     repositories_list = get_files_from_dir(repositories_path)

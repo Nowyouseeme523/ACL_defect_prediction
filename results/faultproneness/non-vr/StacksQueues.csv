@@ -1,0 +1,10 @@
+Component,Threshold,Cutoff,Status
+MainClass,2,5.432098765432098,Clean
+ANumberSequence,6,5.432098765432098,Fault_proner
+ArrayStack<T>,6,5.432098765432098,Fault_proner
+LinkedStack<T>,7,5.432098765432098,Fault_proner
+Node<T>,4,5.432098765432098,Clean
+LinkedQueue<T>,6,5.432098765432098,Fault_proner
+QueueNode<T>,1,5.432098765432098,Clean
+OperationSequence,7,5.432098765432098,Fault_proner
+Node,4,5.432098765432098,Clean

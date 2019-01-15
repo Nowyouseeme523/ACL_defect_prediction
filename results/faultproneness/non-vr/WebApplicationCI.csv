@@ -1,0 +1,16 @@
+Component,Threshold,Cutoff,Status
+BundleConfig,3,8.445,Clean
+AuthConfig,2,8.445,Clean
+About,0,8.445,Clean
+RouteConfig,2,8.445,Clean
+Contact,0,8.445,Clean
+_Default,0,8.445,Clean
+Global,3,8.445,Clean
+SiteMaster,4,8.445,Clean
+Site_Mobile,2,8.445,Clean
+ViewSwitcher,3,8.445,Clean
+Login,4,8.445,Clean
+Manage,6,8.445,Clean
+OpenAuthProviders,7,8.445,Clean
+Register,4,8.445,Clean
+RegisterExternalLogin,5,8.445,Clean

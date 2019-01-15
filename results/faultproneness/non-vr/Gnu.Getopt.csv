@@ -1,0 +1,5 @@
+Component,Threshold,Cutoff,Status
+Getopt,8,6.0,Fault_proner
+Order,0,6.0,Clean
+Argument,1,6.0,Clean
+LongOpt,7,6.0,Fault_proner

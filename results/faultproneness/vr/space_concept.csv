@@ -1,0 +1,6 @@
+Component,Threshold,Cutoff,Status
+SingletonBase<T>,4,10.285714285714286,Clean
+DALSaveGame,5,10.285714285714286,Clean
+QuaternionSurrogate,0,10.285714285714286,Clean
+SaveFileSerializer,4,10.285714285714286,Clean
+Vector3Surrogate,0,10.285714285714286,Clean

@@ -1,0 +1,15 @@
+Component,Threshold,Cutoff,Status
+BadDeviceTokenException,1,6.7252747252747245,Clean
+NotificationAlert,4,6.7252747252747245,Clean
+Notification,9,6.7252747252747245,Fault_proner
+NotificationException,1,6.7252747252747245,Clean
+NotificationLengthException,2,6.7252747252747245,Clean
+NotificationConnection,8,6.7252747252747245,Fault_proner
+NotificationPayload,7,6.7252747252747245,Fault_proner
+NotificationService,8,6.7252747252747245,Fault_proner
+NotificationServiceDistributionType,1,6.7252747252747245,Clean
+ThreadSafeQueue<T>,3,6.7252747252747245,Clean
+Feedback,2,6.7252747252747245,Clean
+FeedbackService,8,6.7252747252747245,Fault_proner
+Receipt,3,6.7252747252747245,Clean
+ReceiptVerification,7,6.7252747252747245,Fault_proner

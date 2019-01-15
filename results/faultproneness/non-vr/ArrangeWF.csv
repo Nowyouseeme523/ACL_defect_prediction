@@ -1,0 +1,8 @@
+Component,Threshold,Cutoff,Status
+Form1,7,6.66734693877551,Fault_proner
+Benchmark,6,6.66734693877551,Clean
+ICard,2,6.66734693877551,Clean
+Card,4,6.66734693877551,Clean
+Program,0,6.66734693877551,Clean
+Resources,3,6.66734693877551,Clean
+Settings,2,6.66734693877551,Clean
