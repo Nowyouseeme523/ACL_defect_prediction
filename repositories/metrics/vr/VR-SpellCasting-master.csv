@@ -18,7 +18,7 @@ VisibilityLevel,0,0,0,0,0,6,0,0,0,-1,0,1
 HandState,0,0,0,0,0,7,0,0,0,-1,0,1
 NVRHead,0,0,0,0,0,3,0,0,0,-1,0,1
 NVRHelpers,1,2,1,0,2,53,5,0,0,1,0,2
-NVRInteractable,9,12,1,7,6,151,27,5,0,"0,17000000178813934",2,8
+NVRInteractable,9,12,1,7,6,151,27,5,0,0.1700000017881393,2,8
 NVRInteractableItem,5,4,0,1,2,90,11,1,1,0,2,5
 NVRInteractableRotator,2,4,1,1,2,62,8,1,1,0,2,1
 NVRInteractables,3,4,0,0,4,40,5,0,0,0,2,3
@@ -141,4 +141,4 @@ RenderModel_ControllerMode_State_t,1,0,0,1,0,5,0,0,0,-1,0,1
 NotificationBitmap_t,4,0,0,4,0,7,0,0,0,-1,0,1
 CameraVideoStreamFrame_t,26,0,0,26,0,30,0,0,0,-1,2,1
 COpenVRContext,18,12,0,9,11,164,31,0,0,0,11,1
-OpenVR,102,10,11,100,10,351,12,0,0,"0,6000000238418579",5,0
+OpenVR,102,10,11,100,10,351,12,0,0,0.6000000238418579,5,0

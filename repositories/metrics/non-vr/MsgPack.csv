@@ -360,7 +360,12 @@ ExpressionCallbackNonGenericListMessagePackSerializer<TCollection>,1,2,0,0,1,33,
 ExpressionTreeSerializerBuilderHelpers,0,2,0,0,2,607,4,0,0,-1,9,1
 ICallbackSerializerFactory,0,1,0,0,0,9,1,1,0,-1,1,1
 CallbackSerializerFactory<T>,0,3,0,0,2,36,3,0,1,-1,1,0
+IEnumerableCallbackSerializerFactory,0,1,0,0,0,10,1,1,0,-1,2,1
 "EnumerableCallbackSerializerFactoryBase<TCollection,TItem,TSerializer>",0,2,0,0,1,30,2,0,1,-1,2,0
+"EnumerableCallbackSerializerFactory<TCollection,TItem>",0,2,0,0,1,23,2,0,0,-1,2,0
+NonGenericEnumerableCallbackSerializerFactory<TCollection>,0,2,0,0,1,23,2,0,0,-1,2,0
+NonGenericCollectionCallbackSerializerFactory<TCollection>,0,2,0,0,1,23,2,0,0,-1,2,0
+ICollectionCallbackSerializerFactory,0,1,0,0,0,9,1,3,0,-1,2,1
 "CollectionCallbackSerializerFactoryBase<TCollection,TItem,TSerializer>",0,2,0,0,1,26,2,0,1,-1,2,0
 "CollectionCallbackSerializerFactory<TCollection,TItem>",0,2,0,0,1,21,2,0,0,-1,2,0
 "ReadOnlyCollectionCallbackSerializerFactory<TCollection,TItem>",0,2,0,0,1,22,2,0,0,-1,2,0
@@ -413,8 +418,13 @@ ReflectionNonGenericDictionaryMessagePackSerializer<TDictionary>,1,2,0,0,1,44,2,
 ReflectionNonGenericListMessagePackSerializer<TList>,1,2,0,0,1,47,2,0,0,0,3,0
 ReflectionSerializerHelper,0,5,0,0,5,436,12,0,0,-1,15,9
 IVariantReflectionSerializerFactory,0,1,0,0,0,4,1,7,0,-1,2,1
+NonGenericEnumerableSerializerFactory<T>,0,2,0,0,2,10,2,0,1,-1,2,0
+NonGenericCollectionSerializerFactory<T>,0,2,0,0,2,10,2,0,1,-1,2,0
+NonGenericListSerializerFactory<T>,0,2,0,0,2,10,2,0,1,-1,2,0
+NonGenericDictionarySerializerFactory<T>,0,2,0,0,2,10,2,0,1,-1,2,0
 "EnumerableSerializerFactory<TCollection,TItem>",0,2,0,0,2,11,2,0,1,-1,2,0
 "CollectionSerializerFactory<TCollection,TItem>",0,2,0,0,2,11,2,0,1,-1,2,0
+"DictionarySerializerFactory<TDictionary,TKey,TValue>",0,2,0,0,2,10,2,0,1,-1,2,0
 ReflectionSerializerNilImplicationHandlerOnUnpackedParameter,4,1,2,2,1,20,1,0,2,0,0,1
 ReflectionSerializerNilImplicationHandlerParameter,2,1,2,0,1,19,1,0,1,0,0,1
 ReflectionTupleMessagePackSerializer<T>,4,5,0,0,1,124,15,0,1,0.4000000059604645,7,0

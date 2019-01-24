@@ -193,6 +193,7 @@ MvcVerificationHttpHandler,1,2,0,1,1,9,2,0,1,1,0,1
 NoAsyncTimeoutAttribute,0,1,0,0,1,5,1,0,3,-1,0,0
 ObjectAsyncResult<T>,2,4,0,0,4,19,4,0,0,0.5,1,0
 OutstandingAsyncOperations,1,6,1,0,5,34,8,0,0,0,0,7
+"ReaderWriterCache<TKey,TValue>",2,3,1,0,0,43,5,0,0,0.6700000166893005,0,0
 ReflectedAsyncControllerDescriptor,3,6,1,0,6,43,10,0,1,0.8299999833106995,4,2
 ReflectedAsyncPatternActionDescriptor,4,13,4,0,9,166,31,0,2,0.6899999976158142,13,3
 ReflectedDelegatePatternActionDescriptor,5,14,3,0,10,157,21,0,2,0.7099999785423279,17,3

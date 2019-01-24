@@ -4,6 +4,6 @@ SteamVRParamFactory,0,6,0,0,5,45,6,0,1,-1,0,1
 HmdType,0,0,0,0,0,1,0,0,0,-1,0,2
 StereoRenderDevice,0,2,0,0,2,33,4,0,0,-1,2,1
 StereoRenderer,24,20,12,8,9,506,53,0,0,0,2,2
-StereoRenderManager,9,11,2,3,7,173,31,0,0,"0,18000000715255737",4,1
+StereoRenderManager,9,11,2,3,7,173,31,0,0,0.1800000071525574,4,1
 TranslucentController,1,2,0,1,0,15,3,0,0,1,0,0
-StereoRendererEditor,11,3,0,0,2,135,18,0,0,"0,6700000166893005",1,0
+StereoRendererEditor,11,3,0,0,2,135,18,0,0,0.6700000166893005,1,0

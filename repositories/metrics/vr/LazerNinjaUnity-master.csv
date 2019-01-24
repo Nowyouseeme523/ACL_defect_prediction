@@ -1,6 +1,6 @@
 Type,NOF,NOM,NOP,NOPF,NOPM,LOC,WMC,NC,DIT,LCOM,Fan-Out,Fan-In
 SetFovGlobalShaderVariable,1,2,0,0,0,16,2,0,0,0,0,0
-VolumetricLineBehavior,10,4,5,0,1,249,9,0,0,"0,5",0,1
+VolumetricLineBehavior,10,4,5,0,1,249,9,0,0,0.5,0,1
 VolumetricLineStripBehavior,6,4,4,0,1,246,14,0,0,0,0,0
 VolumetricMultiLineBehavior,4,4,0,3,1,71,8,0,0,0,1,0
 ExposePropertyAttribute,0,0,0,0,0,2,0,0,0,-1,0,1

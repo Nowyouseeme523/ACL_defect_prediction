@@ -805,6 +805,7 @@ BufferSizeOption,0,2,0,0,0,13,2,0,1,-1,0,2
 BlockSizeOption,0,1,0,0,0,7,1,0,1,-1,0,1
 ReplicationOption,0,1,0,0,0,7,1,0,1,-1,0,1
 AppendIfExistsOption,0,1,0,0,0,7,1,0,1,-1,0,1
+KeyClassOption,0,1,0,0,0,7,1,0,1,-1,0,1
 ValueClassOption,0,1,0,0,0,7,1,0,1,-1,0,1
 MetadataOption,1,2,0,0,0,14,2,0,1,0,1,1
 ProgressableOption,0,1,0,0,0,7,1,0,1,-1,1,1
@@ -1516,6 +1517,7 @@ ZKDelegationTokenSecretManager<TokenIdent>,33,32,0,14,6,1024,71,0,0,0.3400000035
 JaasConfiguration,2,3,0,0,2,55,5,0,2,0,0,1
 _PathChildrenCacheListener_340,1,2,0,0,2,40,3,0,0,0,0,0
 _PathChildrenCacheListener_368,1,2,0,0,2,40,3,0,0,0,0,0
+SASLOwnerACLProvider,1,3,0,0,2,20,3,0,0,0,0,0
 DelegationTokenAuthenticatedURL,3,19,0,0,16,480,28,0,1,0.3700000047683716,10,16
 Token,1,2,0,0,2,17,2,0,0,0,0,13
 DelegationTokenAuthenticationFilter,8,9,0,2,1,282,23,5,1,0.3300000131130219,16,5
@@ -3973,6 +3975,7 @@ ID,2,9,0,0,8,71,12,3,0,0.2199999988079071,0,3
 InputSplit,0,3,0,0,3,36,3,8,0,-1,0,57
 Job,15,99,0,6,86,1777,126,0,2,0.05000000074505806,18,81
 JobState,0,0,0,0,0,5,0,0,0,-1,0,1
+TaskStatusFilter,0,0,0,0,0,8,0,0,0,-1,0,1
 _PrivilegedExceptionAction_320,1,2,0,0,2,18,2,0,0,0,4,0
 _PrivilegedExceptionAction_499,1,2,0,0,2,18,2,0,0,0,4,0
 _PrivilegedExceptionAction_536,2,2,0,0,2,21,2,0,0,0,4,0
@@ -4037,6 +4040,7 @@ HSClientProtocolPB,0,0,0,0,0,3,0,1,0,-1,0,2
 MRClientProtocol,0,15,0,0,0,58,15,4,0,-1,14,10
 MRClientProtocolPB,0,0,0,0,0,3,0,2,0,-1,0,2
 MRDelegationTokenIdentifier,1,3,0,1,3,31,3,0,0,1,0,8
+Renewer,0,1,0,0,0,7,1,0,0,-1,0,0
 HSClientProtocolPBClientImpl,0,1,0,0,1,13,1,0,2,-1,1,0
 MRClientProtocolPBClientImpl,1,19,0,0,18,275,21,1,1,0.1099999994039536,43,0
 HSClientProtocolPBServiceImpl,0,1,0,0,1,7,1,0,1,-1,1,0
@@ -4109,6 +4113,7 @@ _ThreadLocal_58,0,2,0,0,1,14,2,0,0,-1,0,0
 JobReport,0,32,0,0,0,66,32,1,0,-1,2,14
 JobState,0,0,0,0,0,10,0,0,0,-1,0,21
 Locality,0,0,0,0,0,6,0,0,0,-1,0,1
+Phase,0,0,0,0,0,9,0,0,0,-1,0,8
 TaskAttemptCompletionEvent,0,10,0,0,0,22,10,1,0,-1,2,8
 TaskAttemptCompletionEventStatus,0,0,0,0,0,8,0,0,0,-1,0,12
 TaskAttemptId,1,8,0,0,8,77,14,1,0,0.3799999952316284,3,84
@@ -4259,6 +4264,7 @@ FileInputFormatCounter,0,0,0,0,0,4,0,0,0,-1,0,3
 FileSplit,5,11,0,0,11,119,15,0,1,0.1800000071525574,1,12
 FixedLengthInputFormat,1,4,0,1,3,42,5,0,0,0.5,4,0
 FixedLengthRecordReader,13,10,0,0,9,225,14,0,0,0,3,2
+InvalidInputException,2,2,1,0,2,41,2,0,0,0,0,0
 KeyValueLineRecordReader,6,10,0,1,10,122,13,0,0,0.2000000029802322,3,3
 KeyValueTextInputFormat,0,2,0,0,1,21,3,0,0,-1,4,0
 LineRecordReader,14,11,0,1,8,243,24,0,0,0.1800000071525574,4,4
@@ -4333,6 +4339,7 @@ Context,2,51,0,0,51,284,51,0,0,0,6,1
 FileOutputCommitter,10,36,0,5,22,646,73,1,1,0.07999999821186066,6,2
 CommittedTaskFilter,0,1,0,0,1,7,1,0,0,-1,0,0
 "FileOutputFormat<K,V>",8,16,0,4,13,320,19,0,0,0.5600000023841858,8,0
+Counter,0,0,0,0,0,4,0,0,0,-1,0,0
 FileOutputFormatCounter,0,0,0,0,0,4,0,0,0,-1,0,3
 "FilterOutputFormat<K,V>",1,6,0,0,5,92,7,0,0,0.6700000166893005,3,0
 "FilterRecordWriter<K,V>",1,5,0,0,4,38,6,0,0,0.6000000238418579,1,0
@@ -4342,6 +4349,7 @@ MapFileOutputFormat,0,3,0,0,3,77,5,0,0,-1,2,0
 _RecordWriter_75,1,3,0,0,3,22,3,0,0,0,1,1
 "MultipleOutputs<Keyout,Valueout>",13,17,0,0,8,410,29,0,0,0.3499999940395355,4,0
 RecordWriterWithCounter,3,3,0,0,3,31,3,0,0,0,2,0
+WrappedStatusReporter,1,6,0,0,6,34,6,0,1,0,2,0
 "NullOutputFormat<K,V>",0,3,0,0,3,75,3,0,0,-1,4,0
 _RecordWriter_41,0,3,0,0,3,14,3,0,0,-1,1,1
 _OutputCommitter_52,0,9,0,0,9,42,9,0,1,-1,2,1
@@ -4379,6 +4387,7 @@ LongSumReducer<Key>,1,1,0,0,0,18,2,0,0,0,1,0
 "WrappedReducer<Keyin,Valuein,Keyout,Valueout>",0,1,0,0,1,309,1,0,0,-1,1,0
 Context,2,52,0,0,52,292,52,0,0,0,0,1
 ClientProtocol,1,30,0,1,30,296,30,2,0,1,3,16
+ClientProtocolConstants,0,0,0,0,0,3,0,0,0,-1,0,0
 ClientProtocolProvider,0,3,0,0,3,11,3,2,0,-1,1,1
 SecureShuffleUtils,3,9,0,2,6,108,11,0,0,0.7799999713897705,1,3
 TokenCache,6,15,0,2,12,204,24,0,0,0.4000000059604645,3,13
@@ -4386,6 +4395,7 @@ DelegationTokenIdentifier,1,3,0,1,3,24,3,0,0,1,0,1
 DelegationTokenSecretManager,0,2,0,0,2,29,2,0,0,-1,1,0
 DelegationTokenSelector,0,1,0,0,1,8,1,0,0,-1,0,0
 JobTokenIdentifier,2,7,0,1,7,76,8,0,0,0.2899999916553497,0,3
+Renewer,0,1,0,0,0,7,1,0,0,-1,0,0
 JobTokenSecretManager,2,9,0,0,7,97,10,0,0,0.5600000023841858,1,9
 JobTokenSelector,0,1,0,0,1,21,4,0,0,-1,1,0
 JTConfig,43,0,0,43,0,91,0,0,1,-1,0,2
@@ -4460,16 +4470,24 @@ _IComparer_136,1,2,0,0,2,16,2,0,0,0,1,0
 JoinCollector,5,10,0,0,8,187,28,0,0,0,1,7
 InnerJoinRecordReader<K>,0,2,0,0,0,23,4,0,0,-1,2,0
 JoinRecordReader<K>,0,8,0,0,7,117,11,0,2,-1,5,0
+JoinDelegationIterator,1,8,0,0,7,49,8,0,0,0.25,2,1
 "MultiFilterRecordReader<K,V>",2,10,0,0,7,166,16,0,2,0.8999999761581421,6,0
 MultiFilterDelegationIterator,1,8,0,0,7,54,9,0,0,0.25,1,1
 OuterJoinRecordReader<K>,0,2,0,0,0,16,2,0,0,-1,2,0
 "OverrideRecordReader<K,V>",0,3,0,0,0,71,10,0,0,-1,3,0
 Parser,0,2,0,0,0,584,10,0,0,-1,6,4
+TType,0,0,0,0,0,10,0,0,0,-1,0,6
+Token,1,5,0,0,4,32,5,3,0,0.800000011920929,1,4
+NumToken,1,2,0,0,2,15,2,0,1,0,0,1
+NodeToken,1,2,0,0,1,15,2,0,1,0,1,1
+StrToken,1,2,0,0,2,15,2,0,1,0,1,1
+Lexer,1,2,0,0,0,72,3,0,0,0,5,1
 Node,6,9,0,0,3,101,10,2,2,0.7799999713897705,3,5
 WNode,3,7,0,0,4,110,12,0,3,0,8,1
 CNode,2,7,0,0,4,133,19,0,3,0,9,1
 ResetableIterator<T>,0,0,0,0,0,8,0,0,0,-1,0,0
 EMPTY<U>,0,0,0,0,0,4,0,0,0,-1,0,0
+ResetableIteratorConstants,0,0,0,0,0,3,0,0,0,-1,0,0
 StreamBackedIterator<X>,0,0,0,0,0,5,0,0,0,-1,0,0
 TupleWritable,0,5,0,0,2,41,5,0,0,-1,0,8
 "WrappedRecordReader<K,U>",8,20,0,0,17,216,24,0,2,0.1500000059604645,3,0
@@ -4485,6 +4503,7 @@ ValueAggregator,0,0,0,0,0,3,0,8,0,-1,0,4
 ValueAggregatorBaseDescriptor,9,3,0,8,3,99,5,0,1,0.6700000166893005,2,3
 "ValueAggregatorCombiner<K1,V1>",0,4,0,0,4,59,7,0,0,-1,6,0
 ValueAggregatorDescriptor,2,1,0,2,1,13,1,2,0,0,1,5
+ValueAggregatorDescriptorConstants,0,0,0,0,0,3,0,0,0,-1,0,0
 ValueAggregatorJob,0,8,0,0,8,151,17,0,0,-1,6,0
 "ValueAggregatorJobBase<K1,V1>",1,8,0,0,4,73,13,0,2,1,6,0
 "ValueAggregatorMapper<K1,V1>",0,2,0,0,2,36,4,0,0,-1,3,0
@@ -4584,10 +4603,12 @@ HsSingleCounterPage,0,3,0,0,0,42,4,0,1,-1,2,1
 HsTaskPage,0,4,0,0,0,226,5,1,1,-1,5,1
 AttemptsBlock,1,4,0,0,0,155,15,1,0,0,10,1
 HsTasksBlock,1,3,0,0,0,32,6,0,0,0.6700000166893005,5,1
+,0,0,0,0,0,1,0,0,0,-1,0,0
 HsTasksPage,0,4,0,0,0,61,5,0,1,-1,4,1
 HsView,0,6,0,0,0,76,6,8,0,-1,2,0
 HsWebApp,1,2,0,0,2,42,2,0,1,0,2,0
 HsWebServices,4,18,0,0,14,350,43,0,0,0,23,0
+JAXBContextResolver,3,2,0,0,2,28,2,0,0,0,0,0
 CachedHistoryStorage,4,12,0,0,7,263,37,0,1,0.1700000017881393,9,2
 _LinkedHashMap_78,1,2,0,0,1,18,2,0,0,0,1,0
 CompletedJob,15,31,0,0,26,487,48,0,1,0.1000000014901161,24,2
@@ -4615,6 +4636,7 @@ HistoryServerState,2,2,0,0,2,18,2,0,0,1,0,4
 HistoryServerStateStoreServiceFactory,0,1,0,0,1,23,3,0,0,-1,2,1
 HistoryStorage,0,4,0,0,0,37,4,1,0,-1,3,1
 HSAuditLogger,1,7,0,0,2,134,10,0,0,0,2,1
+Keys,0,0,0,0,0,10,0,0,0,-1,0,1
 AuditConstants,5,0,0,1,0,13,0,0,0,-1,0,2
 HSProxies,1,5,0,0,1,75,6,0,0,0,3,1
 JHSDelegationTokenSecretManager,2,8,0,0,3,136,15,0,0,0.25,3,4
@@ -5272,6 +5294,8 @@ ProtoUtils,7,32,0,0,32,260,32,0,0,0.7799999713897705,17,29
 QueueInfoPBImpl,6,38,0,0,24,418,58,0,1,0.1099999994039536,5,5
 _IEnumerable_204,1,2,0,0,2,44,2,0,0,1,2,1
 _IEnumerator_207,2,4,0,0,4,28,4,0,0,0.5,2,1
+_IEnumerable_251,1,2,0,0,2,42,2,0,0,1,2,1
+_IEnumerator_254,2,4,0,0,4,27,4,0,0,0.5,2,1
 QueueUserACLInfoPBImpl,4,17,0,0,10,193,27,0,1,0.119999997317791,2,3
 _IEnumerable_129,1,2,0,0,2,42,2,0,0,1,2,1
 _IEnumerator_132,2,4,0,0,4,27,4,0,0,0.5,2,1
@@ -5400,6 +5424,8 @@ RefreshUserToGroupsMappingsResponsePBImpl,3,6,0,0,6,56,8,0,1,0,0,2
 RemoveFromClusterNodeLabelsRequestPBImpl,4,11,0,0,7,114,18,0,1,0.1800000071525574,0,3
 RemoveFromClusterNodeLabelsResponsePBImpl,3,6,0,0,6,56,8,0,1,0,0,2
 ReplaceLabelsOnNodeRequestPBImpl,4,13,0,0,7,181,21,0,1,0.2300000041723251,2,5
+_IEnumerable_84,1,2,0,0,2,47,2,0,0,1,2,1
+_IEnumerator_87,2,4,0,0,4,31,4,0,0,0.5,2,1
 ReplaceLabelsOnNodeResponsePBImpl,3,6,0,0,6,56,8,0,1,0,0,2
 RunSharedCacheCleanerTaskRequestPBImpl,3,4,0,0,3,40,5,0,1,0,0,2
 RunSharedCacheCleanerTaskResponsePBImpl,3,6,0,0,5,54,7,0,1,0,0,2
@@ -5503,6 +5529,7 @@ BASE<T>,1,2,0,0,1,18,2,0,0,1,0,0
 TITLE<T>,1,4,0,0,1,27,4,0,0,1,0,0
 HEAD<T>,1,18,0,0,16,106,18,0,0,0.6100000143051147,0,0
 TD<T>,0,7,0,0,1,45,7,0,0,-1,0,0
+,0,0,0,0,0,1,0,0,0,-1,0,0
 TH<T>,0,7,0,0,1,45,7,0,0,-1,0,0
 TR<T>,0,3,0,0,1,21,3,0,0,-1,0,0
 COL<T>,0,4,0,0,1,27,4,0,0,-1,0,0
@@ -5662,6 +5689,7 @@ HtmlPage,2,5,0,1,1,70,7,3,1,0.800000011920929,4,1
 _,0,0,0,0,0,3,0,0,0,-1,0,0
 Page,1,3,0,0,1,23,3,0,2,0.6700000166893005,4,1
 InfoBlock,7,3,0,0,0,38,3,0,2,1,7,0
+,0,0,0,0,0,1,0,0,0,-1,0,0
 JQueryUI,21,10,0,21,5,202,28,0,2,0.300000011920929,6,4
 LipsumBlock,0,1,0,0,0,16,1,0,2,-1,1,1
 NavBlock,0,1,0,0,0,9,1,0,2,-1,2,1
@@ -5956,6 +5984,7 @@ WindowsSecureWrapperScriptBuilder,1,2,0,0,1,17,2,0,1,1,1,1
 ElevatedFileSystem,0,1,0,0,0,153,1,0,0,-1,0,0
 ElevatedRawLocalFilesystem,0,5,0,0,3,138,11,0,0,-1,3,0
 WintuilsProcessStubExecutor,9,8,0,0,6,148,12,0,0,0,4,2
+State,0,0,0,0,0,6,0,0,0,-1,0,1
 _Thread_499,2,2,0,0,2,32,3,0,0,0,2,0
 Application,0,4,0,0,0,11,4,1,1,-1,0,13
 ApplicationContainerFinishedEvent,1,2,0,0,2,16,2,0,1,0,1,2
@@ -6107,6 +6136,7 @@ ContainerStartMonitoringEvent,3,4,0,0,4,32,4,0,1,0,1,1
 ContainerStopMonitoringEvent,0,1,0,0,1,7,1,0,1,-1,1,0
 NodeManagerMetrics,14,18,0,0,17,146,18,0,0,0.5600000023841858,1,16
 NMLeveldbStateStoreService,32,55,0,1,33,1245,101,0,1,0.05000000074505806,23,0
+LeveldbLogger,1,1,0,0,1,10,1,0,0,0,0,0
 NMNullStateStoreService,0,36,0,0,33,208,36,0,1,-1,5,0
 NMStateStoreService,0,40,0,0,34,441,40,2,0,-1,5,21
 RecoveredApplicationsState,2,2,0,0,2,18,2,0,0,1,0,2
@@ -6221,6 +6251,9 @@ ContainerFinishedEvent,4,6,0,0,6,45,6,0,1,0,4,1
 SystemMetricsEvent,0,2,0,0,2,12,2,7,0,-1,1,2
 SystemMetricsEventType,0,0,0,0,0,10,0,0,0,-1,0,2
 SystemMetricsPublisher,4,22,0,0,8,463,33,0,0,0.1400000005960464,36,11
+ForwardingEventHandler,1,2,0,0,1,14,2,0,1,0,2,0
+MultiThreadedDispatcher,1,5,0,0,4,63,8,0,1,0.4000000059604645,2,2
+CompositEventHandler,1,2,0,0,1,20,2,0,1,0,3,1
 ProportionalCapacityPreemptionPolicy,19,23,0,6,9,1068,69,0,1,0.09000000357627869,18,0
 _IComparer_705,0,2,0,0,2,18,3,0,0,-1,3,0
 _IComparer_796,0,2,0,0,2,13,2,0,0,-1,1,0
@@ -6247,6 +6280,7 @@ _FSAction_680,3,2,0,0,1,24,2,0,0,0,1,1
 _FSAction_689,1,2,0,0,1,17,2,0,0,0,1,1
 FSAction<T>,1,3,0,0,0,36,4,0,0,0.6700000166893005,1,0
 LeveldbRMStateStore,9,43,0,1,3,789,75,0,1,0.05000000074505806,19,0
+LeveldbLogger,1,1,0,0,1,10,1,0,0,0,0,0
 MemoryRMStateStore,2,23,0,0,5,274,25,0,1,0.4300000071525574,9,1
 NullRMStateStore,0,21,0,0,4,141,21,0,1,-1,6,0
 Recoverable,0,1,0,0,0,5,1,6,0,-1,1,0
@@ -6265,6 +6299,7 @@ RemoveRMDTMasterKeyTransition,0,1,0,0,1,27,2,0,1,-1,4,0
 StoreOrUpdateAMRMTokenTransition,0,1,0,0,1,28,2,0,1,-1,4,0
 RMDTSecretManagerState,3,3,0,0,3,25,3,0,0,1,0,6
 RMState,3,3,0,0,3,26,3,0,0,1,2,17
+ForwardingEventHandler,1,2,0,0,1,14,2,0,1,0,2,0
 StandByTransitionThread,1,2,0,0,1,15,2,0,0,0,2,0
 RMStateStoreAMRMTokenEvent,2,4,0,0,4,29,4,0,1,0.5,2,1
 RMStateStoreAppAttemptEvent,1,2,0,0,2,15,2,0,1,0,1,1
@@ -6611,8 +6646,10 @@ CapacitySchedulerPage,7,1,0,0,0,96,1,0,1,0,0,1
 CSQInfo,2,0,0,0,0,6,0,0,0,-1,2,2
 LeafQueueInfoBlock,1,2,0,0,0,39,2,0,0,0,5,0
 QueueUsersInfoBlock,2,18,0,0,0,30,18,0,0,0.9399999976158142,4,0
+,0,0,0,0,0,1,0,0,0,-1,0,0
 QueueBlock,2,9,0,0,0,69,11,0,0,0.7799999713897705,6,0
 QueuesBlock,6,38,0,0,0,118,41,0,0,0.8700000047683716,13,1
+ContainerPage,0,2,0,0,0,15,2,0,1,-1,4,1
 DefaultSchedulerPage,6,5,0,0,0,116,5,0,1,1,3,1
 QueueInfoBlock,1,2,0,0,0,24,2,0,0,0,3,1
 FairSchedulerAppsBlock,4,2,0,0,1,96,10,0,0,0,14,0
@@ -6643,10 +6680,12 @@ _PrivilegedExceptionAction_1586,2,2,0,0,2,21,2,0,0,0,5,0
 SchedulerPageUtil,0,0,0,0,0,71,0,0,0,-1,0,0
 QueueBlockUtil,0,3,0,0,0,68,3,0,0,-1,0,0
 AppAttemptInfo,7,6,0,0,6,76,10,0,0,0.3300000131130219,9,5
+AppAttemptsInfo,1,3,0,0,3,19,3,0,0,0.6700000166893005,1,2
 AppInfo,34,35,0,0,35,331,43,0,0,0.05999999865889549,13,5
 ApplicationStatisticsInfo,1,3,0,0,3,20,3,0,0,0.6700000166893005,1,2
 ApplicationSubmissionContextInfo,14,29,0,0,29,188,29,0,0,0.1000000014901161,3,2
 AppQueue,1,4,0,0,4,23,4,0,0,0.5,0,2
+AppsInfo,1,3,0,0,3,19,3,0,0,0.6700000166893005,1,2
 AppState,1,4,0,0,4,23,4,0,0,0.5,0,1
 CapacitySchedulerInfo,6,8,0,0,7,81,11,0,1,0.25,4,3
 CapacitySchedulerLeafQueueInfo,12,14,0,0,12,109,14,0,1,0.1400000005960464,4,2

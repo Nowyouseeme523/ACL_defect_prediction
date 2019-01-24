@@ -14,7 +14,7 @@ HighlightElementsModule,3,5,1,0,3,136,16,0,0,0,0,1
 SelectionBoundsModule,2,5,0,0,1,88,11,0,0,0,0,1
 RollingAverage_Vector3,6,3,0,0,3,61,4,0,0,0,0,1
 VertexSnap,3,1,0,3,1,11,1,0,0,0,0,1
-Snapping,6,8,0,1,6,132,17,0,0,"0,5",0,3
+Snapping,6,8,0,1,6,132,17,0,0,0.5,0,3
 VRMath,0,2,0,0,2,34,4,0,0,-1,0,3
 ProBuilderToolBase,5,7,3,0,3,104,16,2,0,0,3,0
 AShapeCreator,4,4,2,1,4,49,4,1,0,1,0,1
@@ -26,14 +26,14 @@ UpdateShaderTime,1,2,0,0,0,19,3,0,0,0,0,0
 TranslateElementTool,27,6,1,2,4,242,21,0,1,0,7,1
 CreateState,0,0,0,0,0,5,0,0,0,-1,0,1
 pb_AboutWindowSetup,0,1,0,0,0,8,1,0,0,-1,1,0
-pb_AboutWindow,29,8,1,4,3,293,20,0,0,"0,3799999952316284",3,2
+pb_AboutWindow,29,8,1,4,3,293,20,0,0,0.3799999952316284,3,2
 pb_UpdateAvailable,6,3,1,0,1,84,5,0,0,0,2,1
 pb_UpdateCheck,4,6,0,0,1,105,14,0,0,0,3,0
 VersionType,0,0,0,0,0,6,0,0,0,-1,0,1
 pb_VersionInfo,7,7,0,7,6,133,11,0,0,0,1,4
 pb_AboutEntry,10,0,0,10,0,15,0,0,0,-1,0,2
 pb_VersionUtil,0,4,0,0,3,101,11,0,0,-1,2,2
-pb_MissingScriptEditor,11,8,3,0,2,379,40,0,0,"0,3799999952316284",0,0
+pb_MissingScriptEditor,11,8,3,0,2,379,40,0,0,0.3799999952316284,0,0
 pb_ScenePostProcessor,0,1,0,0,1,59,12,0,0,-1,0,0
 pb_ExportObj,0,0,0,0,0,2,0,0,0,-1,0,0
 pb_GenerateUV2,0,4,0,0,3,61,11,0,0,-1,0,0

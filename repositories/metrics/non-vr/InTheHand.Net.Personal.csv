@@ -96,6 +96,7 @@ AcceptedPort,2,1,0,2,1,15,3,0,0,0,1,1
 RaiseAcceptParams,0,0,3,0,0,6,0,0,0,-1,0,1
 CommonDiscoveryBluetoothClient,1,19,12,0,12,183,23,2,1,0.6299999952316284,4,2
 CommonRfcommStream,23,59,15,0,9,1221,103,2,0,0.1000000014901161,9,16
+State,0,0,0,0,0,8,0,0,0,-1,0,1
 BeginReadParameters,3,1,0,3,1,14,1,0,0,0,0,1
 FooSocketExceptions,0,2,0,0,0,13,2,0,0,-1,1,1
 CommonSocketExceptions,7,4,0,0,0,44,4,0,0,0,1,6
