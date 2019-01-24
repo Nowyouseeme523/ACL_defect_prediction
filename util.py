@@ -10,7 +10,6 @@ import datetime
 
 
 #needs to install Gnumeric spreadsheet program to convert the files
-
 def xlsx_to_csv(target_dir):
 
 	for file in os.listdir(target_dir):
@@ -77,25 +76,87 @@ def xls_to_xlsx(*args, **kw):
 	filename = filename.replace('xls', 'xlsx')
 	book_xlsx.save(filename)
 
-if __name__ == "__main__":
-	
-	option = True
 
+"""
+	Some projects have duplicated files, so designite create double entries (duplicated lines) when calculate/export smells to csv.
+	Create this rotine to remove the duplicated lines in every csv file.
+	https://stackoverflow.com/questions/15741564/removing-duplicate-rows-from-a-csv-file-using-a-python-script  
+"""
+def remove_duplicated_lines(afile):
+
+	#create a result dir to storage the new files
+	result_dir = os.getcwd() + '/new_csv/'
+	
+	#simple dir check
+	try:
+        #verifies if its a valid dir	
+		os.stat(result_dir)
+	except:
+        #since the dir doesn't exist, create it!
+		os.mkdir(result_dir)
+	
+	#result file will have the same name
+	new_file = result_dir + afile
+
+	#routine
+	with open(afile,'r') as in_file, open(new_file,'w') as out_file:
+		seen = set() # set for fast O(1) amortized lookup
+		for line in in_file:
+			if line in seen: continue # skip duplicate
+
+			seen.add(line)
+			out_file.write(line)
+
+
+if __name__ == "__main__":
+
+	#this solution relies on python 2.X
+
+	#configurations
 	target_dir = 'specify/the/target/dir'
+	target_dir = '/home/stevao/workspace/ACL_defect_prediction/repositories/metrics/vr'
 	os.chdir(target_dir)
 
-	#xlsx -> csv
-	if option:
-		xlsx_to_csv(target_dir)
+	#possible methods
+	print "1 - Remove duplicates from CSV"
+	print "2 - Convert XLSX -> CSV"
+	print "3 - Convert XLS  -> XLSX"
 
-	#xls -> xlsx
-	else:
-		
+	#read the option
+	switch = int(raw_input("Chose an method: "))
+
+	#execute according to the option
+	if switch not in [1,2,3]:
+		print "W: Invalid option!"
+
+	if switch == 1:
+
+		#run for each file from the dir
 		for root, dirs, files in os.walk(".", topdown=False):
 			for file_name in files:
-				print file_name
+
+				#avoid other files				
+				if ".csv" not in file_name:
+					continue
+
+				#execute on csv
+				remove_duplicated_lines(file_name)
+
+
+	if switch == 2:
+
+		#simple do the conversion for all files in the dir (gnumeric tool required)
+		xlsx_to_csv(target_dir)
+
+	if switch == 3:
+
+		#read of files from dir
+		for root, dirs, files in os.walk(".", topdown=False):
+			for file_name in files:				
 				
+				#avoid non xls files
 				if ".xls" not in file_name:
 					continue
 				
+				#do the conversion 
 				xls_to_xlsx(file_name)
