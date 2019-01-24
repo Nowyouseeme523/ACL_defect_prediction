@@ -89,7 +89,6 @@ FireExtinguisher_Sprayer,5,3,0,3,1,49,7,0,1,"0,670000016689301",2,1
 PanelMenuDemoFlyingSaucer,1,1,0,0,1,20,1,0,0,0,0,0
 PanelMenuDemoSphere,1,1,0,0,1,21,1,0,0,0,0,0
 PanelMenuUIGrid,5,10,0,0,1,142,16,0,0,0,5,0
-Direction,0,0,0,0,0,8,0,0,0,-1,0,1
 PanelMenuUISlider,1,4,0,0,0,46,5,0,0,0,4,0
 VRTK_BaseTest,2,7,0,0,0,56,9,1,0,"0,430000007152557",0,1
 VRTK_ControllerReference_Setup,10,12,0,5,0,203,20,0,1,0,5,0

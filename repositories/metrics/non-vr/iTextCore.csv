@@ -635,7 +635,6 @@ CssNestedAtRule,2,8,0,0,8,79,11,4,2,0.25,4,2
 CssNestedAtRuleFactory,0,3,0,0,1,84,5,0,0,-1,6,1
 CssRuleName,19,1,0,19,0,66,1,0,0,0,0,1
 CssRuleSet,4,8,0,0,7,114,15,1,1,0,7,4
-CssRuleSetComparator,1,1,0,0,1,11,1,0,0,0,2,0
 CssSemicolonAtRule,1,2,0,0,2,22,2,0,2,0,1,1
 CssStatement,0,1,0,0,1,13,1,2,0,-1,3,6
 CssStyleSheet,1,10,0,0,8,130,21,0,0,0,12,6
@@ -760,7 +759,6 @@ Jsoup,0,18,0,0,17,306,18,0,0,-1,7,20
 MissingResourceException,2,4,0,0,4,23,4,0,0,0,0,0
 PortUtil,3,7,0,3,7,40,7,0,0,1,1,8
 IdentityComparaor<T>,0,2,0,0,2,12,2,0,0,-1,0,0
-"IdentityDictionary<TKey,TValue>",0,3,0,0,3,18,3,0,0,-1,0,0
 SerializationException,0,4,0,0,4,29,4,0,0,-1,0,0
 UnsupportedMimeTypeException,2,4,0,0,4,23,4,0,0,0,0,0
 Attribute,3,13,2,0,9,143,17,1,0,0.1500000059604645,7,8

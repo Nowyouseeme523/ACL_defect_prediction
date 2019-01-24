@@ -111,7 +111,6 @@ SystemResponse,0,0,3,0,0,16,0,0,0,-1,0,0
 Version,1,0,0,1,0,7,0,0,0,-1,0,1
 ConversationExperimental,3,4,0,0,3,171,13,0,1,"0,5",12,1
 MessageReq,0,0,1,0,0,4,0,0,1,-1,0,1
-CheckServiceStatus,3,3,0,0,1,50,8,0,0,0,4,0
 Workspaces,0,0,1,0,0,9,0,0,0,-1,0,0
 Workspace,0,0,7,0,0,39,0,0,0,-1,0,0
 MessageResponse,0,0,4,0,0,24,0,0,0,-1,0,2
@@ -128,7 +127,6 @@ DialogNode,0,0,9,0,0,49,0,0,0,-1,0,0
 MessageIntent,0,0,2,0,0,14,0,0,0,-1,0,0
 Output,0,0,1,0,0,9,0,0,0,-1,0,0
 GoTo,0,0,3,0,0,19,0,0,0,-1,0,0
-Version,1,0,0,1,0,7,0,0,0,-1,0,1
 Value,0,0,1,0,0,8,0,0,0,-1,0,0
 MetaDataMap,0,0,6,0,0,28,0,0,0,-1,0,0
 Evidence,0,0,8,0,0,36,0,0,0,-1,0,0
@@ -218,10 +216,8 @@ AnswerUnit,0,0,6,0,0,28,0,0,0,-1,0,1
 Content,0,0,2,0,0,12,0,0,0,-1,0,1
 Warning,0,0,2,0,0,12,0,0,0,-1,0,0
 ConversionTarget,3,0,0,3,0,15,0,0,0,-1,0,2
-Version,1,0,0,1,0,7,0,0,0,-1,0,1
 DocumentConversion,3,4,1,0,3,174,18,0,1,"0,5",13,2
 ConvertDocumentRequest,0,0,3,0,0,6,0,0,1,-1,0,1
-CheckServiceStatus,2,2,0,0,1,21,4,0,0,0,2,0
 IWatsonService,0,2,0,0,0,14,2,17,0,-1,0,2
 ServiceHelper,0,1,0,0,1,27,3,0,0,-1,3,1
 Language,0,0,2,0,0,12,0,0,0,-1,0,2
@@ -237,7 +233,6 @@ GetModelsReq,0,0,1,0,0,4,0,0,1,-1,0,1
 GetModelReq,0,0,1,0,0,4,0,0,1,-1,0,1
 GetLanguagesReq,0,0,1,0,0,4,0,0,1,-1,0,1
 IdentifyReq,0,0,1,0,0,4,0,0,1,-1,0,1
-CheckServiceStatus,2,2,0,0,1,20,4,0,0,0,2,0
 Language,0,0,2,0,0,12,0,0,0,-1,0,0
 Languages,0,0,1,0,0,8,0,0,0,-1,0,2
 Translation,0,0,1,0,0,8,0,0,0,-1,0,0
@@ -245,13 +240,6 @@ Translations,0,0,3,0,0,16,0,0,0,-1,0,1
 TranslationModel,0,0,10,0,0,44,0,0,0,-1,0,1
 TranslationModels,0,0,1,0,0,8,0,0,0,-1,0,1
 LanguageTranslator,2,14,0,0,8,426,54,0,1,"0,20999999344348907",20,2
-TranslateReq,0,0,1,0,0,4,0,0,1,-1,0,1
-TypeFilter,0,0,0,0,0,15,0,0,0,-1,0,1
-GetModelsReq,0,0,1,0,0,4,0,0,1,-1,0,1
-GetModelReq,0,0,1,0,0,4,0,0,1,-1,0,1
-GetLanguagesReq,0,0,1,0,0,4,0,0,1,-1,0,1
-IdentifyReq,0,0,1,0,0,4,0,0,1,-1,0,1
-CheckServiceStatus,2,2,0,0,1,20,4,0,0,0,2,0
 Classifier,0,0,7,0,0,32,0,0,0,-1,0,6
 Classifiers,0,0,1,0,0,8,0,0,0,-1,0,5
 Class,0,0,2,0,0,12,0,0,0,-1,0,0
@@ -286,7 +274,6 @@ AcceptLanguage,11,0,0,11,0,47,0,0,0,-1,0,1
 PersonalityInsightsVersion,1,0,0,1,0,7,0,0,0,-1,0,0
 PersonalityInsights,3,4,0,0,3,146,13,0,1,"0,5",11,2
 GetProfileRequest,0,0,3,0,0,15,0,0,1,-1,0,1
-CheckServiceStatus,2,2,0,0,1,20,4,0,0,0,4,0
 SolrClusterListResponse,0,0,1,0,0,8,0,0,0,-1,0,3
 SolrClusterResponse,0,0,4,0,0,20,0,0,0,-1,0,2
 SolrConfigList,0,0,1,0,0,8,0,0,0,-1,0,2
@@ -328,7 +315,6 @@ CreateRankerRequest,0,0,4,0,0,19,0,0,1,-1,0,1
 RankRequest,0,0,4,0,0,19,0,0,1,-1,0,1
 DeleteRankerRequest,0,0,3,0,0,15,0,0,1,-1,0,1
 GetRankerRequest,0,0,3,0,0,15,0,0,1,-1,0,1
-CheckServiceStatus,2,2,0,0,1,20,4,0,0,0,2,0
 ModelSet,0,0,1,0,0,8,0,0,0,-1,0,0
 Model,0,0,7,0,0,32,0,0,0,-1,0,4
 SupportedFeatures,0,0,1,0,0,8,0,0,0,-1,0,1
@@ -378,7 +364,6 @@ GetCustomWordsReq,0,0,4,0,0,7,0,0,1,-1,0,1
 AddCustomWordsRequest,0,0,4,0,0,7,0,0,1,-1,0,1
 DeleteCustomWordRequest,0,0,4,0,0,7,0,0,1,-1,0,1
 GetCustomWordReq,0,0,4,0,0,7,0,0,1,-1,0,1
-CheckServiceStatus,2,2,0,0,1,20,4,0,0,0,2,0
 AudioFormatType,0,0,0,0,0,15,0,0,0,-1,0,1
 VoiceType,0,0,0,0,0,55,0,0,0,-1,0,4
 Voice,0,0,6,0,0,28,0,0,0,-1,0,2
@@ -392,7 +377,6 @@ CustomizationWords,0,0,8,0,0,36,0,0,0,-1,0,0
 Words,0,1,1,0,1,17,1,0,0,-1,0,2
 Word,0,0,2,0,0,12,0,0,0,-1,0,1
 CustomVoiceUpdate,0,1,3,0,1,25,1,0,0,-1,0,2
-Translation,0,0,1,0,0,8,0,0,0,-1,0,2
 ErrorModel,0,0,3,0,0,16,0,0,0,-1,0,0
 TextToSpeech,8,32,3,0,16,1122,130,0,1,"0,1899999976158142",40,4
 GetVoicesReq,0,0,1,0,0,4,0,0,1,-1,0,1
@@ -400,16 +384,12 @@ GetVoiceReq,0,0,1,0,0,4,0,0,1,-1,0,1
 ToSpeechRequest,0,0,3,0,0,6,0,0,1,-1,0,1
 GetPronunciationReq,0,0,5,0,0,8,0,0,1,-1,0,1
 GetCustomizationsReq,0,0,2,0,0,5,0,0,1,-1,0,1
-CreateCustomizationRequest,0,0,3,0,0,6,0,0,1,-1,0,1
-DeleteCustomizationRequest,0,0,3,0,0,6,0,0,1,-1,0,1
-GetCustomizationRequest,0,0,3,0,0,6,0,0,1,-1,0,1
 UpdateCustomizationRequest,0,0,4,0,0,7,0,0,1,-1,0,1
 GetCustomizationWordsRequest,0,0,3,0,0,6,0,0,1,-1,0,1
 AddCustomizationWordsRequest,0,0,4,0,0,7,0,0,1,-1,0,1
 DeleteCustomizationWordRequest,0,0,4,0,0,7,0,0,1,-1,0,1
 GetCustomizationWordRequest,0,0,4,0,0,7,0,0,1,-1,0,1
 AddCustomizationWordRequest,0,0,5,0,0,8,0,0,1,-1,0,1
-CheckServiceStatus,2,2,0,0,1,20,4,0,0,0,2,0
 ToneAnalyzerResponse,0,1,2,0,1,24,1,0,0,-1,1,3
 DocumentTone,0,1,1,0,1,24,2,0,0,-1,1,0
 ToneCategory,0,1,3,0,1,34,2,0,0,-1,1,2
@@ -417,7 +397,6 @@ Tone,0,1,3,0,1,28,1,0,0,-1,0,1
 SentenceTone,3,1,8,0,1,109,2,0,0,0,1,1
 ToneAnalyzer,3,4,0,0,3,122,11,0,1,"0,5",12,2
 GetToneAnalyzerRequest,0,0,2,0,0,5,0,0,1,-1,0,1
-CheckServiceStatus,2,2,0,0,1,20,4,0,0,0,2,0
 DilemmasResponse,0,0,2,0,0,12,0,0,0,-1,0,3
 Problem,0,0,3,0,0,16,0,0,0,-1,0,3
 Column,0,0,12,0,0,52,0,0,0,-1,0,2
@@ -639,7 +618,6 @@ fsMissingVersionConstructorException,0,1,0,0,1,4,1,0,0,-1,0,0
 fsDuplicateVersionNameException,0,1,0,0,1,4,1,0,0,-1,0,0
 fsIgnoreAttribute,0,0,0,0,0,3,0,0,0,-1,0,0
 fsISerializationCallbacks,0,4,0,0,0,27,4,0,0,-1,1,2
-fsSerializationCallbackProcessor,0,5,0,0,5,25,6,0,1,-1,2,0
 fsJsonParser,3,24,0,0,2,492,66,0,0,0,3,20
 fsJsonPrinter,0,9,0,0,4,276,22,0,0,-1,2,7
 fsMemberSerialization,0,0,0,0,0,16,0,0,0,-1,0,3

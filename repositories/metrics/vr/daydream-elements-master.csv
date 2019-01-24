@@ -105,7 +105,6 @@ FadeParameters,5,1,0,5,1,37,2,0,0,0,1,1
 ConstellationMenuItem,5,0,0,5,0,11,0,1,0,-1,0,3
 ConstellationMenuRoot,27,18,0,16,10,296,36,0,0,"0,17000000178813934",7,3
 ConstellationMenuItemEvent,0,0,0,0,0,4,0,0,0,-1,0,2
-GvrMenuActivationButton,0,0,0,0,0,6,0,0,0,-1,0,1
 GvrMenuActivationMode,0,0,0,0,0,6,0,0,0,-1,0,0
 ConstellationMenuTree,1,0,0,1,0,7,0,0,1,-1,1,1
 CustomCenterOfMass,2,2,0,1,0,20,3,0,0,0,0,0
