@@ -7,17 +7,21 @@ import numpy as np
 
 def pie_chart():
 
-    #data
-    total = 19619
-    buggy = 2186
-    clean = total - buggy
+    #data-vr
+    total_vr, buggy_vr = 19832, 2226 
+    clean_vr = total_vr - buggy_vr
+    values_vr = [clean_vr, buggy_vr]
 
-    values = [clean, buggy]
+    #data-non-vr
+    total_nvr, buggy_nvr = 20418, 1903
+    clean_nvr = total_nvr - buggy_nvr
+    values_nvr = [clean_nvr, buggy_nvr]
+
     #colors = ['b', 'g', 'r', 'c', 'm', 'y']
     colors = ['b', 'r']
     labels = ['Clean Classes', 'Fault pronner classes']
     explode = (0, 0)
-    plt.pie(values, colors=colors, labels= values,explode=explode,counterclock=False, shadow=True)
+    plt.pie(values_vr, colors=colors, labels= values_vr,explode=explode,counterclock=False, shadow=True)
     plt.axis('equal')
 
     #plt.title('Classification of the analyzed instances according to ACL')
@@ -55,4 +59,5 @@ def stacked_histogram():
 
 if __name__ == "__main__":
     
-    stacked_histogram()
+    pie_chart()
+    #stacked_histogram()

@@ -98,7 +98,7 @@ def compute_HAM_MVM(afile):
 
         #sometimes we have modules with the same name. This avoid the replacement of values in the dict
         if module in MVM_values:
-            module = module + "_other"
+            module = module + "_duplicated"
 
         MVM_values[module] = results
     
