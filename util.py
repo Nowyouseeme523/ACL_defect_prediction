@@ -114,7 +114,6 @@ if __name__ == "__main__":
 
 	#configurations
 	target_dir = 'specify/the/target/dir'
-	target_dir = '/home/stevao/workspace/ACL_defect_prediction/repositories/metrics/vr'
 	os.chdir(target_dir)
 
 	#possible methods
