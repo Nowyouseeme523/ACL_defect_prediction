@@ -64,6 +64,8 @@ def count_smels(work_sheet):
                 
 if __name__ == '__main__':
 
+    #python3 required
+
     #gather results
     results = dict()
 

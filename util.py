@@ -107,7 +107,7 @@ def remove_duplicated_lines(afile):
 			seen.add(line)
 			out_file.write(line)
 
-
+#used to format some data before run the other scripts
 if __name__ == "__main__":
 
 	#this solution relies on python 2.X

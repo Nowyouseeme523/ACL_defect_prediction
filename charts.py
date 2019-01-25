@@ -8,12 +8,12 @@ import numpy as np
 def pie_chart():
 
     #data-vr
-    total_vr, buggy_vr = 19832, 2226 
+    total_vr, buggy_vr = 21508, 2627 
     clean_vr = total_vr - buggy_vr
     values_vr = [clean_vr, buggy_vr]
 
     #data-non-vr
-    total_nvr, buggy_nvr = 20418, 1903
+    total_nvr, buggy_nvr = 21568, 1921
     clean_nvr = total_nvr - buggy_nvr
     values_nvr = [clean_nvr, buggy_nvr]
 

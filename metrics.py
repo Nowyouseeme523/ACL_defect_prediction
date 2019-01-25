@@ -46,7 +46,7 @@ if __name__ == '__main__':
     #base dir
     base_dir = os.getcwd()
 
-    repositories_path  = base_dir + "/repositories/metrics/non-vr"
+    repositories_path  = base_dir + "/repositories/metrics/vr"
 
     os.chdir(repositories_path)
 
