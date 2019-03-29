@@ -4,9 +4,10 @@
 # import the pyplot library
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 
-def pie_chart():
-
+#old model just to mantain documented
+def old_pie_chart():
     #data-vr
     total_vr, buggy_vr = 21508, 2627 
     clean_vr = total_vr - buggy_vr
@@ -25,9 +26,36 @@ def pie_chart():
     plt.axis('equal')
 
     #plt.title('Classification of the analyzed instances according to ACL')
-    
+
     plt.legend(labels,loc=3)
+    plt.show()    
+
+
+def pie_chart():
+
+    # Pie chart
+    labels = ['Clean Classes', 'Fault pronner classes']
+    sizes = [87.79, 12.21]
+    sizes_tested = [91.10, 8.90]
+
+    #colors
+    colors = ['#66b3ff', '#ff9999'] #,'#99ff99','#ffcc99'
+    
+    #explsion
+    explode = (0.05,0.05)
+    
+    plt.pie(sizes_tested, colors = colors, autopct='%1.1f%%', startangle=90, pctdistance=0.85, explode = explode, textprops={'fontsize': 20, 'fontweight': 'bold'})
+    
+    #draw circle
+    centre_circle = plt.Circle((0,0),0.70,fc='white')
+    fig = plt.gcf()
+    fig.gca().add_artist(centre_circle)
+    # Equal aspect ratio ensures that pie is drawn as a circle
+    plt.axis('equal')  
+    plt.tight_layout()
+    #plt.legend(labels)
     plt.show()
+
 
 def stacked_histogram():
 
@@ -54,10 +82,50 @@ def stacked_histogram():
     plt.yticks(np.arange(0, 1100, 100))
     plt.legend((p1[0], p2[0]), ('Clean', 'Fault'))
 
+    plt.show()
 
-    plt.show()    
+
+def correlation_chart():
+    
+    
+    
+    #grouped the average of faults by size of repos -> 0~50| 51~100| 101~150| 151~200| 201~500| 500+
+    groups = ['0~50', '51~100', '101~150', '151~200', '201~500', '500+']
+    data_nonvr = [3, 11.23, 14.80, 14.6, 29.90, 122.33]
+    data_vr =    [5, 13.44, 12.07, 20.92, 23.80, 130.28]
+
+    plt.plot(groups, data_vr)
+    plt.plot(groups, data_nonvr)
+
+    #labels
+    plt.xlabel("Repositories grouped by number of classes")
+    plt.ylabel("Average of fault-prone classes")
+    
+    plt.legend(('VR', 'NonVR'))
+
+    plt.show()
 
 if __name__ == "__main__":
-    
-    pie_chart()
-    #stacked_histogram()
+
+    #requires python-tk
+
+    #possible methods
+    print "1 - Pichart"
+    print "2 - Correlation"
+    print "3 - Histogram"
+
+    #read the option
+    switch = int(raw_input("Chose a chart: "))
+
+    #execute according to the option
+    if switch not in [1,2,3,4]:
+        print "W: Invalid option!"
+
+    if switch == 1:
+        pie_chart()
+    if switch == 2:
+        correlation_chart()
+    if switch == 3:
+        stacked_histogram()
+    if switch == 4:
+        pass
