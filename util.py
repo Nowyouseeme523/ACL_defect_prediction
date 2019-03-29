@@ -124,8 +124,8 @@ def get_classe_names_from_csv_dir(csv_dir):
 	try:
 		os.chdir(csv_dir)
 	except Exception as e:
-		print a
-		print "E: Invalid directory. Ending execution."
+		print e
+		print "E: Invalid directory. Ending execution. (get_classe_names_from_csv_dir)"
 		sys.exit(-1)
 
 	#will store the results into a dict
@@ -171,8 +171,8 @@ def search_all_test_class(projects_dir):
 	try:
 		os.chdir(projects_dir)
 	except Exception as e:
-		print "E: Invalid directory. Ending execution."
-		sys(-1)
+		print "E: Invalid directory. Ending execution. (search_all_test_class)"
+		sys.exit(-1)
 
 	# traverse root directory, and list directories as dirs and files as files
 	for root, dirs, files in os.walk("."):
@@ -264,15 +264,19 @@ def find_all_classes_tested(projects_dir, csv_dir):
 						#add new occurrence
 						results[one_unit_test_class] = results[one_unit_test_class] + [one_experimented_class] 
 
+	#remove duplicated
+	tested_classes = list(set(chain(*results.values())))
+	test_classes =   unit_test_classes.values()
 	
-	print "Number of classes of test: ", len(unit_test_classes.values())
-	print "Number of classes tested: ",  len(list(set(chain(*results.values()))))
+	print "Number of classes of test: ", len(test_classes)
+	print "Number of classes tested: ",  len(tested_classes)
 
+	
+	#will store the results into a pandas' data_frame
+	data_frame = pd.DataFrame(tested_classes, columns=["tested_classes"])
 
-	for key, value in results.items():
-
-		print "Class of test: ", key
-		print "Classes tested: ", value
+	return data_frame
+	
 
 
 #used to format some data before run the other scripts
@@ -281,7 +285,6 @@ if __name__ == "__main__":
 	#this solution relies on python 2.X
 
 	#configurations
-	target_dir = 'specify/the/target/dir'
 	target_dir = '.'
 	os.chdir(target_dir)
 
@@ -332,10 +335,18 @@ if __name__ == "__main__":
 
 	if switch == 4:
 
-		#target dir
-		directory = "specify/a/valid/dir"
-		
-		csv_dir = "specify/a/valid/dir"
-		projects_dir = "specify/a/valid/dir"
-		
-		find_all_classes_tested(projects_dir, csv_dir)
+		base_dir = os.getcwd()
+
+		csv_dir      = base_dir + "/results/full_results/metrics/non-vr" #dir to the results of full smells
+		projects_dir = base_dir + "/repositories/source"        #check the repositories info to find the links to the repos source code
+
+		print "I: This operation can take sometime. In the end will save the results into a csv file."
+
+		#can take sometime.. 
+		data_frame = find_all_classes_tested(projects_dir, csv_dir)
+
+		#change to the correct place
+		os.chdir(base_dir + "/results/sampled_results/")
+
+		#save the data frame into a csv file to futher use
+		data_frame.to_csv('tested_classes.csv', index=False)
