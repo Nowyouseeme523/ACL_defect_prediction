@@ -1,12 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 import os
+import sys
 
 import openpyxl
+import pandas as pd
 
 #extra
 import xlrd
 import datetime
+from itertools import chain
 
 
 #needs to install Gnumeric spreadsheet program to convert the files
@@ -26,6 +30,7 @@ def xlsx_to_csv(target_dir):
 		#print statment
 		statment = 'ssconvert {} {}'.format(file,new_file)
 		os.system(statment)
+
 
 
 """
@@ -89,10 +94,10 @@ def remove_duplicated_lines(afile):
 	
 	#simple dir check
 	try:
-        #verifies if its a valid dir	
+		#verifies if its a valid dir	
 		os.stat(result_dir)
 	except:
-        #since the dir doesn't exist, create it!
+		#since the dir doesn't exist, create it!
 		os.mkdir(result_dir)
 	
 	#result file will have the same name
@@ -107,6 +112,169 @@ def remove_duplicated_lines(afile):
 			seen.add(line)
 			out_file.write(line)
 
+
+
+"""
+	Given a dir that contains the results of designite about code smells into csv format, read all csv files and retrive the name of all
+	classes analyzed  
+"""
+def get_classe_names_from_csv_dir(csv_dir):
+	
+	#enter into the dir
+	try:
+		os.chdir(csv_dir)
+	except Exception as e:
+		print a
+		print "E: Invalid directory. Ending execution."
+		sys.exit(-1)
+
+	#will store the results into a dict
+	results = {}
+
+	# traverse root directory, and list directories as dirs and files as files
+	for root, dirs, files in os.walk("."):
+		
+		#check every file		
+		for file_name in files:
+			
+			#check if it's a csv file
+			if file_name[-4:] == ".csv":
+				
+				#add the complet path to the file
+				target_file = csv_dir + '/' + file_name
+
+				#create a dataframe with the information of the csv
+				data_frame = pd.read_csv(target_file)
+
+				#get the name of the classes
+				classes = list(data_frame['Type'])
+				
+				#creat a dict wich the key is the name of the csv and the value is a list with the classes present into that csv file
+				results[file_name[:-4]] = classes			
+	
+	#just return the results
+	return results
+
+
+
+
+"""
+	Given a directory check all files and search for C# test classes 
+"""
+def search_all_test_class(projects_dir):
+
+
+	#will store the results.:: Format -> Name of the file -> path of the file
+	results = {}
+
+	#enter into the dir
+	try:
+		os.chdir(projects_dir)
+	except Exception as e:
+		print "E: Invalid directory. Ending execution."
+		sys(-1)
+
+	# traverse root directory, and list directories as dirs and files as files
+	for root, dirs, files in os.walk("."):
+
+		#print the base path
+		path = root.split(os.sep)
+		#print (len(path) - 1) * '+++', os.path.basename(root)
+		
+		#check every file		
+		for file_name in files:
+
+			#check if it's a C# file
+			if file_name[-3:] == ".cs":
+			
+				#add the complet path to the file
+				target_file = os.getcwd() + '/' + root + '/' + file_name
+				
+				#open the .cs file
+				with open(target_file, 'r') as afile:
+
+					#convert the content of the file into a string
+					afile_content = afile.read().replace('\n', '')
+
+					#test evidences will identify whether afile has test content or not
+					test_evidence = "[TestFixture]"
+					
+					#check the content of afile
+					if test_evidence in afile_content:
+
+						#save a dict with all classes that contains C# tests
+						results[file_name] = target_file
+
+	#just return the results
+	return results
+							
+
+"""
+	Will evaluate all classes of the experiment individually in order to verify wheter that class was properly tested or not
+	We wanna know all classes that were properly tested
+"""
+def find_all_classes_tested(projects_dir, csv_dir):
+
+	#will store the results
+	results = {}
+
+	#first get all classes used in the experiment
+
+	#get the name of all classes used in the experiment:. Format:: key = project name; values = list of the classes.: eg: project -> [v, a, l, u, e, s]
+	experimented_classes_dict = get_classe_names_from_csv_dir(csv_dir)
+	
+	#get only the name of the classes used
+	experiment_classes = list(chain(*experimented_classes_dict.values()))
+
+	#remove duplicates
+	experiment_classes = list(set(experiment_classes))
+	
+	#remove possible nans from the list
+	experiment_classes = [x for x in experiment_classes if str(x) != 'nan']
+	
+	#now get all classes of test of the repositories
+	unit_test_classes  = search_all_test_class(projects_dir)
+
+	#key is the name of the classe and value is the path of the class
+	for one_unit_test_class, path_of_unit_test_class in unit_test_classes.items():
+
+		#open every unit test class
+		with open(path_of_unit_test_class, 'r') as target_test_class:
+
+			#convert the content of the unit test class into a string
+			target_test_class_content = target_test_class.read().replace('\n', '')
+
+			#verify every class that was used in the experiment
+			for one_experimented_class in experiment_classes:
+
+				#this occurs when the class is checked against itself
+				if one_experimented_class == one_unit_test_class:
+					continue
+
+				#check whether that class was tested or not 
+				if one_experimented_class in target_test_class_content:
+
+					#first occurrence 
+					if one_unit_test_class not in results.keys():
+						results[one_unit_test_class] = [one_experimented_class]
+
+					#avoid duplication
+					if one_experimented_class not in results[one_unit_test_class]:
+
+						#add new occurrence
+						results[one_unit_test_class] = results[one_unit_test_class] + [one_experimented_class] 
+
+	
+	print "Number of classes of test: ", len(unit_test_classes.values())
+	print "Number of classes tested: ",  len(list(set(chain(*results.values()))))
+
+
+	for key, value in results.items():
+
+		print "Class of test: ", key
+		print "Classes tested: ", value
+
+
 #used to format some data before run the other scripts
 if __name__ == "__main__":
 
@@ -114,18 +282,20 @@ if __name__ == "__main__":
 
 	#configurations
 	target_dir = 'specify/the/target/dir'
+	target_dir = '.'
 	os.chdir(target_dir)
 
 	#possible methods
 	print "1 - Remove duplicates from CSV"
 	print "2 - Convert XLSX -> CSV"
 	print "3 - Convert XLS  -> XLSX"
+	print "4 - Find C# tested classes"
 
 	#read the option
 	switch = int(raw_input("Chose an method: "))
-
+	
 	#execute according to the option
-	if switch not in [1,2,3]:
+	if switch not in [1, 2, 3, 4]:
 		print "W: Invalid option!"
 
 	if switch == 1:
@@ -159,3 +329,13 @@ if __name__ == "__main__":
 				
 				#do the conversion 
 				xls_to_xlsx(file_name)
+
+	if switch == 4:
+
+		#target dir
+		directory = "specify/a/valid/dir"
+		
+		csv_dir = "specify/a/valid/dir"
+		projects_dir = "specify/a/valid/dir"
+		
+		find_all_classes_tested(projects_dir, csv_dir)
