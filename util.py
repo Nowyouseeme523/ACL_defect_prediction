@@ -276,7 +276,44 @@ def find_all_classes_tested(projects_dir, csv_dir):
 	data_frame = pd.DataFrame(tested_classes, columns=["tested_classes"])
 
 	return data_frame
+
+
+"""
+	Given a repositorie, read all csv files in order to get the name of all classes from each file
+"""
+def get_all_classes_from_dir(a_dir):
+
+	final_data_frame = pd.DataFrame([])
+
+	#check each file of a dir
+	for root, dirs, files in os.walk(a_dir, topdown=False):
+		for csv_file in files:
+
+			#if its not a csv file, just ignore
+			if ".csv" not in csv_file:
+				continue
+
+			#full_path
+			file_path = a_dir + '/' + csv_file
+			
+			#create a data_frame from the csv
+			data_frame = pd.read_csv(file_path,sep=',')
+
+			#get the name of the columns that will be removed
+			columns = list(data_frame.columns.values)
+			columns.remove('Type')
+			
+			#remove all columns from data_frame (Type column is manteined because it was removed from columns before this operation) 
+			data_frame.drop(columns= columns, inplace= True) #now repo contains only Type column
+
+			print data_frame.head()
+
+			#add to the final data_frame
+			final_data_frame = final_data_frame.append(data_frame)
 	
+
+	#will convert the df to a csv file in the end
+	return final_data_frame
 
 
 #used to format some data before run the other scripts
@@ -293,12 +330,13 @@ if __name__ == "__main__":
 	print "2 - Convert XLSX -> CSV"
 	print "3 - Convert XLS  -> XLSX"
 	print "4 - Find C# tested classes"
+	print "5 - Find all class of a list of projects"
 
 	#read the option
 	switch = int(raw_input("Chose an method: "))
 	
 	#execute according to the option
-	if switch not in [1, 2, 3, 4]:
+	if switch not in [1, 2, 3, 4, 5]:
 		print "W: Invalid option!"
 
 	if switch == 1:
@@ -350,3 +388,19 @@ if __name__ == "__main__":
 
 		#save the data frame into a csv file to futher use
 		data_frame.to_csv('tested_classes.csv', index=False)
+
+	if switch == 5:
+
+		#base dir		
+		base_dir = os.getcwd()
+
+		csv_dir = base_dir + "/results/full_results/metrics/vr"
+
+		#store the results into a pandas dataframe
+		df = get_all_classes_from_dir(csv_dir)
+
+		#change to the correct place
+		os.chdir(base_dir + "/results/sampled_results/")
+
+		#save the data frame into a csv file to futher use
+		df.to_csv('all_vr_classes.csv', index=False)
