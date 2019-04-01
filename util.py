@@ -387,7 +387,7 @@ if __name__ == "__main__":
 		os.chdir(base_dir + "/results/sampled_results/")
 
 		#save the data frame into a csv file to futher use
-		data_frame.to_csv('tested_classes.csv', index=False)
+		data_frame.to_csv('all_classes_used_on_tests.csv', index=False)
 
 	if switch == 5:
 

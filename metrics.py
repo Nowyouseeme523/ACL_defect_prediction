@@ -3,6 +3,7 @@
 
 import os
 import sys
+import csv
 
 import pandas as pd
 
@@ -22,6 +23,7 @@ def compute_metrics(afile, repo_filter = None):
         #need to filter the repo according to filter_file
         repo = repo[~repo.index.isin(repo_filter.index)]
 
+    class_names = list(repo['Type'])
 
     #get general information of each repositorie
     num_classes = repo['Type'].count()
@@ -50,7 +52,7 @@ def compute_metrics(afile, repo_filter = None):
         results = results + [r]
 
     #return a list with the total of each column, num_classes, lines_code 
-    return results, num_classes, lines_code
+    return results, class_names, num_classes, lines_code
 
 
 """
@@ -60,7 +62,7 @@ def compute_all_metrics(repo_filter = None):
     
     #will store the final results
     results = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    classes, loc, total_classes, total_loc = 0, 0, 0, 0
+    classes, class_names, loc, total_classes, total_loc, all_class_names = 0, [], 0, 0, 0, []
 
     
     for root, dirs, files in os.walk(".", topdown=False):
@@ -74,20 +76,21 @@ def compute_all_metrics(repo_filter = None):
 
             #check wheter filter the csv_file or not
             if repo_filter:
-                result, classes, loc = compute_metrics(csv_file, repo_filter) #Non-VR
+                result, class_names, classes, loc = compute_metrics(csv_file, repo_filter) #Non-VR
             else:
-                result, classes, loc = compute_metrics(csv_file) #VR
+                result, class_names, classes, loc = compute_metrics(csv_file) #VR
             
             #sum up the results
             total_loc += loc
             total_classes += classes
+            all_class_names = all_class_names + class_names
     
             #sum the values of all files in results
             for i in range(len(result)):
                 results[i] += result[i]
     
     #return the results
-    return results, total_loc, total_classes
+    return results, total_loc, total_classes, all_class_names
     
 
 if __name__ == '__main__':
@@ -109,23 +112,30 @@ if __name__ == '__main__':
     repositories_non_vr_path  = "./results/full_results/metrics/non-vr"
 
     #csv file used was filter
-    non_vr_tested_classes = base_dir + "/results/sampled_results/non_vr_tested_classes.csv"
+    non_vr_tested_classes = base_dir + "/results/sampled_results/all_classes_used_on_tests.csv"
 
+    all_class_names = []
 
     #change to the targeted path.: VR analize all classes. Non-VR analize only tested classes
     if(switch == 1):    
         os.chdir(repositories_vr_path)
 
         #run comput all metrics for a given dir
-        results, total_loc, total_classes = compute_all_metrics()
+        results, total_loc, total_classes, all_class_names = compute_all_metrics()
     
     else:
         
         os.chdir(repositories_non_vr_path)
 
         #run comput all metrics for a given dir
-        results, total_loc, total_classes = compute_all_metrics(repo_filter= non_vr_tested_classes)
+        results, total_loc, total_classes, all_class_names = compute_all_metrics(repo_filter= non_vr_tested_classes)
 
+    #save the tested class into a csv file
+    file_path = base_dir + '/results/sampled_results/non_vr_tested_classes.csv'
+    with open(file_path, "w") as output:
+        writer = csv.writer(output, lineterminator='\n')
+        for class_name in all_class_names:
+            writer.writerow([class_name]) 
 
     #print the results properly
 
