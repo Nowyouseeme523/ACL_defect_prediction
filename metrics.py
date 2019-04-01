@@ -2,14 +2,26 @@
 # -*- coding: utf-8 -*-
 
 import os
+import sys
 
 import pandas as pd
 
-def compute_metrics(afile):
+"""
+    Given a csv file, compute 
+"""
+def compute_metrics(afile, repo_filter = None):
 
     results = []
 
     repo = pd.read_csv(afile,sep=',')
+
+    #check wheter should filter the data_frame or not
+    if repo_filter:
+        repo_filter = pd.read_csv(repo_filter, sep=',')
+
+        #need to filter the repo according to filter_file
+        repo = repo[~repo.index.isin(repo_filter.index)]
+
 
     #get general information of each repositorie
     num_classes = repo['Type'].count()
@@ -37,31 +49,36 @@ def compute_metrics(afile):
         r =  new_df[c]
         results = results + [r]
 
-    #return a list with the total of each column 
+    #return a list with the total of each column, num_classes, lines_code 
     return results, num_classes, lines_code
+
+
+"""
+    Given a directory, compute metrics for all valid csv files
+"""
+def compute_all_metrics(repo_filter = None):
     
-
-if __name__ == '__main__':
-    
-    #base dir
-    base_dir = os.getcwd()
-
-    repositories_path  = base_dir + "/repositories/metrics/vr"
-
-    os.chdir(repositories_path)
-
-    #final results
+    #will store the final results
     results = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     classes, loc, total_classes, total_loc = 0, 0, 0, 0
+
+    
     for root, dirs, files in os.walk(".", topdown=False):
-        for name in files:
+        for csv_file in files:
             
-            if ".csv" not in name:
+            if ".csv" not in csv_file:
                 continue
 
             #comput sum value for all columns
             result = []
-            result, classes, loc = compute_metrics(name)
+
+            #check wheter filter the csv_file or not
+            if repo_filter:
+                result, classes, loc = compute_metrics(csv_file, repo_filter) #Non-VR
+            else:
+                result, classes, loc = compute_metrics(csv_file) #VR
+            
+            #sum up the results
             total_loc += loc
             total_classes += classes
     
@@ -69,6 +86,49 @@ if __name__ == '__main__':
             for i in range(len(result)):
                 results[i] += result[i]
     
+    #return the results
+    return results, total_loc, total_classes
+    
+
+if __name__ == '__main__':
+
+	#choices
+    print "1 - Run on VR projects"
+    print "2 - Run on Non-VR projects"
+
+    #read the option
+    switch = int(raw_input("Chose a target: "))
+	
+    #execute according to the option
+    if switch not in [1, 2]:
+        print "W: Invalid option!"
+
+    base_dir = os.getcwd()
+
+    repositories_vr_path      = "./results/full_results/metrics/vr"
+    repositories_non_vr_path  = "./results/full_results/metrics/non-vr"
+
+    #csv file used was filter
+    non_vr_tested_classes = base_dir + "/results/sampled_results/non_vr_tested_classes.csv"
+
+
+    #change to the targeted path.: VR analize all classes. Non-VR analize only tested classes
+    if(switch == 1):    
+        os.chdir(repositories_vr_path)
+
+        #run comput all metrics for a given dir
+        results, total_loc, total_classes = compute_all_metrics()
+    
+    else:
+        
+        os.chdir(repositories_non_vr_path)
+
+        #run comput all metrics for a given dir
+        results, total_loc, total_classes = compute_all_metrics(repo_filter= non_vr_tested_classes)
+
+
+    #print the results properly
+
     #name of the columns
     columns = ['NOF','NOM','NOP','NOPF','NOPM','LOC','WMC','NC','DIT','LCOM','Fan-Out', 'Fan-In']
 
