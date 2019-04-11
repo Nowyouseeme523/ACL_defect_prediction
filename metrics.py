@@ -15,14 +15,14 @@ def compute_metrics(afile, repo_filter = None):
     results = []
 
     repo = pd.read_csv(afile,sep=',')
-
+    
     #check wheter should filter the data_frame or not
     if repo_filter:
         repo_filter = pd.read_csv(repo_filter, sep=',')
 
         #need to filter the repo according to filter_file
-        repo = repo[~repo.index.isin(repo_filter.index)]
-
+        repo = repo[repo['Type'].isin(repo_filter['Type'])]
+    
     class_names = list(repo['Type'])
 
     #get general information of each repositorie
@@ -44,7 +44,6 @@ def compute_metrics(afile, repo_filter = None):
         columns.remove('Type') #name isn't important
     except:
         print("E: Can't do operation in: {}".format(afile))
-
 
     #get the total of each column and place inside a index of a list
     for c in columns:
@@ -101,7 +100,7 @@ if __name__ == '__main__':
 
     #read the option
     switch = int(raw_input("Chose a target: "))
-	
+
     #execute according to the option
     if switch not in [1, 2]:
         print "W: Invalid option!"
@@ -112,7 +111,7 @@ if __name__ == '__main__':
     repositories_non_vr_path  = "./results/full_results/metrics/non-vr"
 
     #csv file used was filter
-    non_vr_tested_classes = base_dir + "/results/sampled_results/all_classes_used_on_tests.csv"
+    non_vr_tested_classes = base_dir + "/results/sampled_results/non_vr_tested_classes.csv"
 
     all_class_names = []
 
@@ -130,12 +129,6 @@ if __name__ == '__main__':
         #run comput all metrics for a given dir
         results, total_loc, total_classes, all_class_names = compute_all_metrics(repo_filter= non_vr_tested_classes)
 
-    #save the tested class into a csv file
-    file_path = base_dir + '/results/sampled_results/non_vr_tested_classes.csv'
-    with open(file_path, "w") as output:
-        writer = csv.writer(output, lineterminator='\n')
-        for class_name in all_class_names:
-            writer.writerow([class_name]) 
 
     #print the results properly
 

@@ -51,6 +51,7 @@ def results_to_csv(csv_name, my_results):
 Given a csv file with metrics compute HAM and MVM
 params:
     afile = target csv file
+    repo_filter = a csv file to filter afile before compute other operations
 """
 def compute_HAM_MVM(afile):
 
@@ -64,7 +65,6 @@ def compute_HAM_MVM(afile):
     	repository.drop('LCOM', axis=1, inplace=True)
     except Exception as e:
     	print("Error file: {}".format(afile))
-    
 
     columns = repository.columns
 
@@ -170,8 +170,28 @@ if __name__ == '__main__':
     if sys.version_info[0] < 3:
         raise Exception("Python 3 or a more recent version is required.")
 
-    repositories_path  = base_dir + "/repositories/metrics/vr/"
-    results_path = base_dir + "/results/faultproneness/vr"
+	#choices
+    print("1 - Run on VR projects")
+    print("2 - Run on Non-VR projects")
+
+    #read the option
+    switch = int(input("Chose a target: "))
+
+    #execute according to the option
+    if switch not in [1, 2]:
+        print("W: Invalid option!")
+
+
+    repositories_vr_path  = base_dir + "/results/full_results/metrics/vr/"
+    repositories_non_vr_path  = base_dir + "/results/full_results/metrics/non-vr/"
+
+    #change to the targeted path.: VR analize all classes. Non-VR analize only tested classes
+    if(switch == 1):    
+        repositories_path = repositories_vr_path
+        results_path = base_dir + "/results/full_results/faultproneness/vr/"
+    else:
+        repositories_path = repositories_non_vr_path
+        results_path = base_dir + "/results/full_results/faultproneness/non-vr"
 
     #get the name of the result file of each repository
     repositories_list = get_files_from_dir(repositories_path)
@@ -192,8 +212,13 @@ if __name__ == '__main__':
         #path of csv file
         target_dir = repositories_path + rep
 
-        #cumpute results for rep
-        HAM_values, MVM_values = compute_HAM_MVM(target_dir)
+        #compute results for rep
+        if switch == 1:
+            HAM_values, MVM_values = compute_HAM_MVM(target_dir) #VR
+        else:
+            HAM_values, MVM_values = compute_HAM_MVM(target_dir) #Non-VR
+        
+        #compute cutoff
         result = compute_cutoff(HAM_values, MVM_values)
 
         #store the results in a csv_file
@@ -201,11 +226,44 @@ if __name__ == '__main__':
         all_results[rep] = result
         results_to_csv(csv_name, result)
 
-    for key, values in all_results.items():
-        faults = 0
-        total = 0
-        for v in values:
-            total += 1
-            if "Fault_proner" in v["Status"]:
-                faults += 1
-        print("{},{},{}".format(key[:-4], faults, total))
+    #dont need to filter the results
+    if switch == 1:
+
+        for key, values in all_results.items():
+            faults = 0
+            total = 0
+            for v in values:
+                total += 1
+                if "Fault_proner" in v["Status"]:
+                    faults += 1
+            print("{},{},{}".format(key[:-4], faults, total))
+
+
+    #filter the results before print
+    else:
+
+        #open the csv filter
+        repo_filter = base_dir + "/results/sampled_results/non_vr_tested_classes.csv"
+        repo_filter = pd.read_csv(repo_filter, sep=',')
+
+        #loop the results.: key is the project, values are the classses and information whether is fautpronner or not
+        for key, values in all_results.items():
+            
+            faults = 0
+            total = 0
+
+            #for each class of every file
+            for instance in values:
+
+                #check if the result is one of the non-tested non-vr classes
+                if repo_filter['Type'].str.contains(instance['Component']).any():
+
+                    #count the result
+                    total += 1
+
+                    #check whether it's faultprone or not
+                    if "Fault_proner" in instance["Status"]:
+                        faults += 1
+
+            #after read every file information, print the results            
+            print("{},{},{}".format(key[:-4], faults, total))
