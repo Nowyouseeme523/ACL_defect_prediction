@@ -336,7 +336,7 @@ if __name__ == "__main__":
 	switch = int(raw_input("Chose an method: "))
 	
 	#execute according to the option
-	if switch not in [1, 2, 3, 4, 5]:
+	if switch not in [1, 2, 3, 4, 5, 6]:
 		print "W: Invalid option!"
 
 	if switch == 1:
