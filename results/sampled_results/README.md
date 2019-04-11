@@ -7,5 +7,5 @@ Characteristics
 | Atribute                          | Non-VR    |
 |-----------------------------------|-----------|
 | Projects                          | 107       |
-| Number of classes                 | 4187      |
-| Number of lines of code (C# Only) |           |
+| Number of classes                 | 1858      |
+| Number of lines of code (C# Only) | 252629    |
