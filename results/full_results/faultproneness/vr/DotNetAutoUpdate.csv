@@ -1,0 +1,10 @@
+Component,Threshold,Cutoff,Status
+AutoUpdate,9,6.1878690284487385,Fault_proner
+CoverageExcludeAttribute,4,6.1878690284487385,Clean
+IAutoUpdate,6,6.1878690284487385,Clean
+InvalidSignatureEventArgs,0,6.1878690284487385,Clean
+PendingUpdate,6,6.1878690284487385,Clean
+StringExtensionMethods,1,6.1878690284487385,Clean
+UpdateKeys,6,6.1878690284487385,Clean
+UpdateSettings,2,6.1878690284487385,Clean
+WebClientExtensions,2,6.1878690284487385,Clean

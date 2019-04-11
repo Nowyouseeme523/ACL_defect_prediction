@@ -1,0 +1,6 @@
+Component,Threshold,Cutoff,Status
+BaseDirHelper,1,7.469714285714285,Clean
+DBInteractor,6,7.469714285714285,Clean
+MySQLInterceptorStats,4,7.469714285714285,Clean
+MySqlServer,8,7.469714285714285,Fault_proner
+Resources,4,7.469714285714285,Clean

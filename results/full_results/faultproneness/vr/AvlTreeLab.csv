@@ -1,0 +1,4 @@
+Component,Threshold,Cutoff,Status
+AvlTree<T>,5,8.395061728395063,Clean
+Node<T>,6,8.395061728395063,Clean
+Program,1,8.395061728395063,Clean

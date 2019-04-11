@@ -1,0 +1,3 @@
+Component,Threshold,Cutoff,Status
+BankAccount,8,7.5,Fault_proner
+Trending,2,7.5,Clean

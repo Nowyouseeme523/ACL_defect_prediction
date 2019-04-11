@@ -1,0 +1,8 @@
+Component,Threshold,Cutoff,Status
+TestFramework,1,9.62428048142334,Clean
+IntExtensions,3,9.62428048142334,Clean
+NullableIntExtensions,4,9.62428048142334,Clean
+ObjectExtensions,5,9.62428048142334,Clean
+StringExtensions,5,9.62428048142334,Clean
+Check,6,9.62428048142334,Clean
+Check<T>,4,9.62428048142334,Clean

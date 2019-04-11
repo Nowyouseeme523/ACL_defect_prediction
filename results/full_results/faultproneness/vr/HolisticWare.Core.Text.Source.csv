@@ -1,0 +1,4 @@
+Component,Threshold,Cutoff,Status
+CharacterSeparatedValues,5,10.285714285714286,Clean
+Parser,0,10.285714285714286,Clean
+SplitIntelligentlyExtensions,4,10.285714285714286,Clean

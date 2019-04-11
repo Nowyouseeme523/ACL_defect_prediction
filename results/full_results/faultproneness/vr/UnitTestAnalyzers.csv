@@ -1,0 +1,17 @@
+Component,Threshold,Cutoff,Status
+TestNameMustIncludeMemberUnderTestAnalyzer,8,7.734375,Fault_proner
+UseAAACommentsAnalyzer,8,7.734375,Fault_proner
+UseCorrectTestNameFormatAnalyzer,8,7.734375,Fault_proner
+UseUnitTestsSuffixAnalyzer,8,7.734375,Fault_proner
+Resources,4,7.734375,Clean
+AttributeBasedTestParser,7,7.734375,Clean
+IUnitTestParser,4,7.734375,Clean
+MSTestParser,5,7.734375,Clean
+NUnitTestParser,2,7.734375,Clean
+UnitTestParserFactory,5,7.734375,Clean
+XunitTestParser,2,7.734375,Clean
+AnalyzersSettings,7,7.734375,Clean
+UnitTestFramework,1,7.734375,Clean
+SettingsFile,3,7.734375,Clean
+SettingsProvider,6,7.734375,Clean
+SettingsReader,2,7.734375,Clean

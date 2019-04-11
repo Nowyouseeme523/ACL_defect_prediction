@@ -1,0 +1,9 @@
+Component,Threshold,Cutoff,Status
+IDeviceParamFactory,3,8.284810126582279,Clean
+SteamVRParamFactory,4,8.284810126582279,Clean
+HmdType,1,8.284810126582279,Clean
+StereoRenderDevice,3,8.284810126582279,Clean
+StereoRenderer,9,8.284810126582279,Fault_proner
+StereoRenderManager,9,8.284810126582279,Fault_proner
+TranslucentController,1,8.284810126582279,Clean
+StereoRendererEditor,5,8.284810126582279,Clean

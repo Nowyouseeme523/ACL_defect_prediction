@@ -1,0 +1,12 @@
+Component,Threshold,Cutoff,Status
+PracticumInputProcessor,8,10.05509641873278,Clean
+IOrderProcessor,3,10.05509641873278,Clean
+Dish,9,10.05509641873278,Clean
+Menu,3,10.05509641873278,Clean
+IInputProcessor,3,10.05509641873278,Clean
+PracticumOrderProcessor,8,10.05509641873278,Clean
+Order,8,10.05509641873278,Clean
+Program,3,10.05509641873278,Clean
+MenuItem,5,10.05509641873278,Clean
+MorningMenu,5,10.05509641873278,Clean
+NightMenu,5,10.05509641873278,Clean
