@@ -394,7 +394,22 @@ if __name__ == "__main__":
 		#base dir		
 		base_dir = os.getcwd()
 
-		csv_dir = base_dir + "/results/full_results/metrics/vr"
+		#read the option
+		print "1 - Run on VR projects"
+		print "2 - Run on Non-VR projects"
+		switch = int(raw_input("Chose an option: "))
+		
+		#execute according to the option
+		if switch not in [1, 2]:
+			print "W: Invalid option!"
+			sys.exit(-1)
+
+		if switch == 1:
+			filename = 'all_vr_classes.csv'
+			csv_dir = base_dir + "/results/full_results/metrics/vr"
+		else:
+			filename = 'all_nonvr_classes.csv'
+			csv_dir = base_dir + "/results/full_results/metrics/non-vr"
 
 		#store the results into a pandas dataframe
 		df = get_all_classes_from_dir(csv_dir)
@@ -403,4 +418,4 @@ if __name__ == "__main__":
 		os.chdir(base_dir + "/results/sampled_results/")
 
 		#save the data frame into a csv file to futher use
-		df.to_csv('all_vr_classes.csv', index=False)
+		df.to_csv(filename, index=False)
