@@ -331,6 +331,7 @@ if __name__ == "__main__":
 	print "3 - Convert XLS  -> XLSX"
 	print "4 - Find C# tested classes"
 	print "5 - Find all class of a list of projects"
+	print "6 - Find duplication entries on fault results"
 
 	#read the option
 	switch = int(raw_input("Chose an method: "))
@@ -419,3 +420,56 @@ if __name__ == "__main__":
 
 		#save the data frame into a csv file to futher use
 		df.to_csv(filename, index=False)
+
+	if switch == 6:
+
+		#base dir		
+		base_dir = os.getcwd()
+
+		#read the option
+		print "1 - Run on VR projects"
+		print "2 - Run on Non-VR projects"
+		switch = int(raw_input("Chose an option: "))
+		
+		#execute according to the option
+		if switch not in [1, 2]:
+			print "W: Invalid option!"
+			sys.exit(-1)
+
+		if switch == 1:
+			csv_dir = base_dir + "/results/full_results/faultproneness/vr"
+		else:
+			csv_dir = base_dir + "/results/full_results/faultproneness/non-vr"
+		
+		all_files = [f for f in os.listdir(csv_dir) if os.path.isfile(os.path.join(csv_dir, f))]
+
+		for csv_file in all_files:
+
+			#if its not a csv file, just ignore
+			if ".csv" not in csv_file:
+				continue
+
+			#counters
+			duplicated_fault_counter = 0 
+			duplicated_clean_counter = 0
+
+			#full_path
+			file_path = csv_dir + '/' + csv_file
+			
+			#open the csv file
+			with open(file_path, 'r') as f:
+
+				#check every line of the file
+				for line in f:
+					
+					#check if its a duplicated line
+					if "duplicated" in line:		
+						if "Clean" in line:
+							duplicated_clean_counter += 1 #count if its clean
+						if "Fault_proner" in line:
+							duplicated_fault_counter += 1 #count if its faulty
+
+				#print the results at the end
+				print "{}: {}, {}".format(csv_file, duplicated_fault_counter, duplicated_clean_counter)
+					
+							
