@@ -1,9 +1,0 @@
-Component,Threshold,Cutoff,Status
-SetFovGlobalShaderVariable,1,7.646341463414634,Clean
-VolumetricLineBehavior,7,7.646341463414634,Clean
-VolumetricLineStripBehavior,6,7.646341463414634,Clean
-VolumetricMultiLineBehavior,7,7.646341463414634,Clean
-ExposePropertyAttribute,1,7.646341463414634,Clean
-TransformExtensionMethods,1,7.646341463414634,Clean
-ExposeProperties,5,7.646341463414634,Clean
-PropertyField,7,7.646341463414634,Clean
