@@ -4,6 +4,3 @@ statistics
 openpyxl
 xlrd
 datetime
-plotly
-statsmodels
-scipy
